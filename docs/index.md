@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: "My Awesome Project"
+  name: "Ai coding 渐进式"
   text: "A VitePress Site"
   tagline: My great project tagline
   actions:
@@ -15,11 +15,11 @@ hero:
       link: /api-examples
 
 features:
-  - title: Feature A
+  - title: Agent
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
+  - title: Laravel
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
+  - title: 宝塔面板
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
 
