@@ -13,7 +13,15 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: 'Examples',
+        text: '一般内容',
+        items: [
+          { text: 'Markdown Examples', link: '/markdown-examples' },
+          { text: 'Runtime API Examples', link: '/api-examples' },
+          { text: 'Laravel项目启动', link: '/laravel' },
+        ]
+      },
+      {
+        text: 'Laravel',
         items: [
           { text: 'Markdown Examples', link: '/markdown-examples' },
           { text: 'Runtime API Examples', link: '/api-examples' },
