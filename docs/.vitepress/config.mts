@@ -15,13 +15,21 @@ export default defineConfig({
       {
         text: '一般内容',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
+          { text: '剪切板', link: '/markdown-examples' },
           { text: 'Runtime API Examples', link: '/api-examples' },
           { text: 'Laravel项目启动', link: '/laravel' },
         ]
       },
       {
         text: 'Laravel',
+        items: [
+          { text: 'Markdown Examples', link: '/markdown-examples' },
+          { text: 'Runtime API Examples', link: '/api-examples' },
+          { text: 'Laravel项目启动', link: '/laravel' },
+        ]
+      },
+      {
+        text: 'Agent',
         items: [
           { text: 'Markdown Examples', link: '/markdown-examples' },
           { text: 'Runtime API Examples', link: '/api-examples' },
