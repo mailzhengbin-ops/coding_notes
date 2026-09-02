@@ -45,7 +45,7 @@ Actions通常是一个类里只有一个方法，Services里通常是一个类�
 ## controller合service
 基于 thin controller思想，controller内不应该处理一大堆业务逻辑，而是把具体业务交给service完成，自己则负责完成如下逻辑
 
-```php
+```md
 // 一个thin controller的内部逻辑如下
 HTTP Request
      ↓
@@ -53,7 +53,7 @@ Controller
      │
      ├─ ① 接收请求
      ├─ ② 验证输入
-     ├─ ③ 获取用户/参数/文件
+     ├─ ③ 准备数据（获取用户/参数/文件）
      ├─ ④ 调用 Service / Action
      ├─ ⑤ 接收处理结果
      └─ ⑥ 返回 Response / Redirect
