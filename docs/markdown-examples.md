@@ -22,7 +22,7 @@ app/
 └── Exceptions/          ← 异常相关
 ```
 
-provider的文件结构
+## Providers
 ```php
 class AppServiceProvider extends ServiceProvider
 {
@@ -37,4 +37,10 @@ class AppServiceProvider extends ServiceProvider
     }
 }
 ```
-注意：自己在Service中创建的普通Service通常不需要再register中注册
+注意：自己在Services中创建的具体Service通常不需要再register中注册，因为Service Container会自动解析具体的类
+
+## Actions和Services
+Actions通常是一个类里只有一个方法，Services里通常是一个类里一组同主题的方法
+
+controller合service
+基于 thin controller思想，controller内不应该处理一大堆业务逻辑，而是把具体业务交给service完成，自己则负责接受请求、调用service、返回数据
