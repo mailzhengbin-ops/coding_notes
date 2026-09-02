@@ -1,4 +1,4 @@
-#Laravel项目启动
+# Laravel项目启动
 
 ## 环境安装
 以下指令安装php、composer、laravel installer（laravel.new提供）
@@ -16,7 +16,6 @@ composer -v
 Web服务器：采用php内置的开发服务器，通过`php artisan serve`启动
 
 数据库：默认采用Laravel内置的sqlite
-
 
 ## Starter Kits开发套件
 
