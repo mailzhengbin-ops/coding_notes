@@ -1,22 +1,10 @@
-我的编辑
-# 我的laravel
-## 开启powershell代理
-```powershell
-# 启动
-$env:HTTP_PROXY="http://127.0.0.1:7897"
-$env:HTTPS_PROXY="http://127.0.0.1:7897"
-# 验证
-echo $env:HTTP_PROXY
-echo $env:HTTPS_PROXY
-```
 
-## 开发环境安装
- php、composer、laravel installer：
+## 环境安装（laravel.new）
+以下指令安装php、composer、laravel installer
 
 ```powershell
-# 执行命令会安装 php、composer、laravel installer
+# 指令
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://php.new/install/windows/8.5'))
-
 
 # 检查
 laravel --version
@@ -26,22 +14,9 @@ composer -v
 
 
 
-Web服务器：Laravel可以通过`php artisan serve`启动PHP底层内置的开发服务器，方便快速启动网站，以预览效果，而不必配置繁琐的Nginx或者Apache
+Web服务器：使用php内置开发服务器，通过`php artisan serve`启动
 
-数据库：`config/database.php`配置默认<font style="color:rgb(0, 106, 177);background-color:rgb(243, 243, 243);">    'default' => env('DB_CONNECTION', 'sqlite')</font>使用sqlite数据库，按照.env内配置的数据库信息链接数据库，自动执行了<font style="color:rgb(0, 106, 177);background-color:rgb(243, 243, 243);">database/migrations/文件下的五个迁移文件创建了数据库和10张表，</font>
-
-|  | `php artisan serve` | Nginx |
-| --- | --- | --- |
-| 类型 | PHP 内置开发服务器 | 专业 Web 服务器 |
-| 主要用途 | 本地开发 | 生产环境 |
-| 安装 | Laravel/PHP 自带 | 需要单独安装 |
-| 配置 | 几乎不用配置 | 需要配置 |
-| 性能 | 开发够用 | 高性能 |
-| 并发 | 不适合高并发 | 适合高并发 |
-| HTTPS | 不适合正式部署 | 支持完善 |
-| 静态文件 | 基本够用 | 非常擅长 |
-| PHP-FPM | 不需要 | 通常配合 PHP-FPM |
-| 生产环境 | ❌ 不推荐 | ✅ 推荐 |
+数据库：默认使用内置的sqlite数据库
 
 
 ## 创建项目（可选择安装Starter Kits）
