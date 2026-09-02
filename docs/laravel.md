@@ -1,6 +1,6 @@
 
-## 环境安装（laravel.new）
-以下指令安装php、composer、laravel installer
+## 环境安装
+以下指令安装php、composer、laravel installer（laravel.new提供）
 
 ```powershell
 # 指令
@@ -12,20 +12,19 @@ php -v
 composer -v
 ```
 
+Web服务器：采用php内置的开发服务器，通过`php artisan serve`启动
+
+数据库：默认采用Laravel内置的sqlite
 
 
-Web服务器：使用php内置开发服务器，通过`php artisan serve`启动
+## Starter Kits开发套件
 
-数据库：默认使用内置的sqlite数据库
-
-
-## 创建项目（可选择安装Starter Kits）
 ```powershell
-# 执行此命令可以选择安装 Starter Kits 开发套件
+# 执行Laravel初始化指令，选择Starter Kits开发套件
 laravel new example-app
 ```
 
-## 项目构建、打包
+## 项目构建
 ```powershell
 # 安装npm依赖 并 打包前端文件
 npm install && npm run build
