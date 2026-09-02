@@ -17,7 +17,7 @@ export default defineConfig({
         items: [
           { text: 'Markdown Examples', link: '/markdown-examples' },
           { text: 'Runtime API Examples', link: '/api-examples' },
-          { text: 'Laravel Examples', link: '/laravel' },
+          { text: 'Laravel项目启动', link: '/laravel' },
         ]
       }
     ],
