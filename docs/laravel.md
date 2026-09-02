@@ -1,3 +1,4 @@
+#Laravel项目启动
 
 ## 环境安装
 以下指令安装php、composer、laravel installer（laravel.new提供）
@@ -25,41 +26,17 @@ laravel new example-app
 ```
 
 ## 项目构建
+
 ```powershell
-# 安装npm依赖 并 打包前端文件
+# 安装前端npm依赖，打包前端文件
 npm install && npm run build
-# 启动三个进程：laravel开发服务器、队列监听器、npm ru
+
+# 启动laravel开发服务器、vite开发服务器、队列监听器
 composer run dev
 ```
-
-流程
-
-npm install 安装package.json中的依赖
+注意：项目composer命令只能在`composer.json` 的同级目录运行，全局composer则不需要  
 
 
-
-composer run dev：执行以下命令：
-
-启动Laravel开发服务器
-
-启动vite开发服务器（＝运行了npm run dev）
-
-启动队列工作进程（用于后台任务）
-
-注意：npm run build是打包前端资源到public/build开发环境可以不适用
-
-
-
-项目composer命令只能在包含 `composer.json` 的目录运行，全局composer则不需要  
-
-```powershell
-# 全局composer命令
-composer -V
-composer global show
-
-# 项目composer命令
-composer run dev
-```
 
 ## Inertia（Laravel前端集成模式）
 > Starter Kits套件自带，使用服务器端路由（无需前端路由）开发 React单页应用程序 (SPA)，实现前后端一体化（单体架构），进而避免繁杂的前后端分离
