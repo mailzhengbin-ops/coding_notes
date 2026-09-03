@@ -40,10 +40,10 @@ class AppServiceProvider extends ServiceProvider
 注意：自己在Services中创建的具体Service通常不需要再register中注册，因为Service Container会自动解析具体的类
 
 ## Actions和Services
-Actions通常是一个类里只有一个方法，Services里通常是一个类里一组同主题的方法
+Actions（操作类）通常是一个类里只有一个方法，用于处理一个具体的业务，Services（服务类）里通常是一个类里一组方法，用于处理同类的业务
 
-## controller合service
-基于 thin controller思想，controller内不应该处理一大堆业务逻辑，而是把具体业务交给service完成，自己则负责完成如下逻辑
+## Thin Controller
+thin controller是一种控制器设计方式：controller内不应该处理一大堆业务逻辑，而是把具体业务交给service完成，自己则负责完成如下逻辑
 
 ```md
 // 一个thin controller的内部逻辑如下
