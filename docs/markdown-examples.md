@@ -60,3 +60,30 @@ Controller
      ↓
 HTTP Response
 ```
+
+用户使用某服务，完整流程为：Service→Service Providers→Service Container
+
+Service（服务类）：真正提供服务的类
+Service Providers（服务提供商）：用于注册服务到Service Container，告诉其如何使用该服务类
+Service Container（服务容器）：管理类依赖项和执行依赖注入
+
+以系统的服务提供商说明：
+vender/laravel/framework/src/Illuminate/Cache/CacheServiceProvider.php，其提供了三个服务类（cache，cache.store，memcached.connect）
+
+```php
+public function register()
+{
+    $this->app->singleton('cache', function ($app) {
+        return new CacheManager($app);
+    });
+
+    $this->app->singleton('cache.store', function ($app) {
+        return $app['cache']->driver();
+    });
+
+    $this->app->singleton('memcached.connector', function () {
+        return new MemcachedConnector;
+    });
+}
+```
+当我们使用cache服务类时，服务容器会解析出CacheManager服务类的实例并返回
