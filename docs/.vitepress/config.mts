@@ -15,7 +15,7 @@ export default defineConfig({
       {
         text: '杂项',
         items: [
-          { text: '剪切板', link: '/markdown-examples' },
+          { text: '剪切板', link: '/api-examples' },
         ]
       },
       {
