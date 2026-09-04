@@ -7,6 +7,7 @@ composer install --no-dev --optimize-autoloader
 
 npm run build
 ```
+注意：服务器需要有composer和node.js、npm
 ## 创建APP_KEY
 执行如下命令，自动在.env文件中生成APP_KEY配置
 ```
