@@ -1,12 +1,10 @@
 # 部署上线
 
 ## 依赖安装
-composer包
+安装composer和npm包
 ```
 composer install --no-dev --optimize-autoloader
-```
-npm包
-```
+
 npm run build
 ```
 ## 创建APP_KEY
