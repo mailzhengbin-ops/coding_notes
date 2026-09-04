@@ -11,7 +11,7 @@ hero:
       text: 查看文档
       link: /laravel
 
-features:
+# features:
   - title: Agent
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
   - title: Laravel
