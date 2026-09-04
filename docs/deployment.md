@@ -50,7 +50,7 @@ php artisan migrate
 ```
 
 ## 优化缓存
-优化配置、事件、路由、视图的缓存
+把 Laravel 运行时需要读取和解析的信息（config、event、route、view）提前生成缓存，从而让生产环境启动和请求处理更快
 ```
 php artisan optimize
 ```
