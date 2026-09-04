@@ -6,6 +6,25 @@
 php artisan key:generate
 ```
 
+## 扩展和函数
+官方要求必须开启的扩展
++ PHP >= 8.3
++ Ctype PHP Extension
++ cURL PHP Extension
++ DOM PHP Extension
++ Fileinfo PHP Extension
++ Filter PHP Extension
++ Hash PHP Extension
++ Mbstring PHP Extension
++ OpenSSL PHP Extension
++ PCRE PHP Extension
++ PDO PHP Extension
++ Session PHP Extension
++ Tokenizer PHP Extension
++ XML PHP Extension
+此外，创建软链必须取消禁用函数
++ symlink()
+
 ## 数据库选择与迁移
 
 由于Laravel默认采用sqlite，如更换数据库需要到.env文件中切换数据库，更改连接配置，
