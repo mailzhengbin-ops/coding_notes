@@ -35,19 +35,19 @@ composer run dev
 
 ## 定制化（可用布局）
 resources/js/layouts/app-layout.tsx
-```
+```ts
 import AppLayoutTemplate from '@/layouts/app/app-sidebar-layout'; 
 
 import AppLayoutTemplate from '@/layouts/app/app-header-layout'; 
 ```
 resources/js/components/app-sidebar.tsx
-```
+```ts
 <Sidebar collapsible="icon" variant="sidebar"> 
 
 <Sidebar collapsible="icon" variant="inset"> 
 ```
 resources/js/layouts/auth-layout.tsx
-```
+```ts
 import AuthLayoutTemplate from '@/layouts/auth/auth-simple-layout'; 
 
 import AuthLayoutTemplate from '@/layouts/auth/auth-split-layout'; 
