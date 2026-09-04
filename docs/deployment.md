@@ -22,6 +22,7 @@ php artisan key:generate
 + Session PHP Extension
 + Tokenizer PHP Extension
 + XML PHP Extension
+
 此外，创建软链必须取消禁用函数
 + symlink()
 
