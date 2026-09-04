@@ -68,7 +68,7 @@ Laravel 需要写入 `/ bootstrap/cacheetc storage/webserver ...
 ```
 php artisan storage:link
 ```
-## 配置nginx
+## 配置nginx站点设置
 ```nginx
 server {
     listen 80;
