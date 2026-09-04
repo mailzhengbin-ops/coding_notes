@@ -69,7 +69,7 @@ Laravel 需要写入 `/ bootstrap/cacheetc storage/webserver ...
 php artisan storage:link
 ```
 ## 配置nginx
-官方推荐的nginx站点配置
+官方推荐的nginx站点配置，生产环境需要替换为自己的站点信息
 ```nginx
 server {
     listen 80;
