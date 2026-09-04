@@ -3,16 +3,13 @@
 layout: home
 
 hero:
-  name: "Ai coding 渐进式"
-  text: "A VitePress Site"
+  name: "全栈开发手册"
+  text: "基于AI+Laravel"
   tagline: My great project tagline
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
-    - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: 查看文档
+      link: /laravel
 
 features:
   - title: Agent
