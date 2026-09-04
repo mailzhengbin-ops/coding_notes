@@ -1,5 +1,14 @@
 # 部署上线
 
+## 依赖安装
+composer包
+```
+composer install --no-dev --optimize-autoloader
+```
+npm包
+```
+npm run build
+```
 ## 创建APP_KEY
 执行如下命令，自动在.env文件中生成APP_KEY配置
 ```
