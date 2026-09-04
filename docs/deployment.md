@@ -37,6 +37,7 @@ php artisan optimize:clear
 Laravel 需要写入 `/ bootstrap/cacheetc storage/webserver ...
 
 ## 创建软链接
+在public/storage创建软链指向storage/app/public
 ```
 php artisan storage:link
 ```
