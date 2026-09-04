@@ -35,7 +35,7 @@ php artisan key:generate
 
 ## 数据库选择与迁移
 
-由于Laravel默认采用sqlite，如更换数据库需要到.env文件中切换数据库，更改连接配置，
+由于Laravel默认采用sqlite，如更换数据库需要到.env文件中切换数据库，更改连接配置
 ```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -68,7 +68,8 @@ Laravel 需要写入 `/ bootstrap/cacheetc storage/webserver ...
 ```
 php artisan storage:link
 ```
-## 配置nginx站点设置
+## 配置nginx
+官方推荐的nginx站点配置
 ```nginx
 server {
     listen 80;
@@ -107,3 +108,4 @@ server {
     }
 }
 ```
+包含了根目录、伪静态等配置
