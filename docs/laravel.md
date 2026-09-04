@@ -33,6 +33,25 @@ composer run dev
 ```
 注意：项目composer命令只能在`composer.json` 的同级目录运行，全局composer则不需要  
 
+## 定制化（可用布局）
+resources/js/layouts/app-layout.tsx
+```
+import AppLayoutTemplate from '@/layouts/app/app-sidebar-layout'; 
+
+import AppLayoutTemplate from '@/layouts/app/app-header-layout'; 
+```
+resources/js/components/app-sidebar.tsx
+```
+<Sidebar collapsible="icon" variant="sidebar"> 
+
+<Sidebar collapsible="icon" variant="inset"> 
+```
+resources/js/layouts/auth-layout.tsx
+```
+import AuthLayoutTemplate from '@/layouts/auth/auth-simple-layout'; 
+
+import AuthLayoutTemplate from '@/layouts/auth/auth-split-layout'; 
+```
 
 
 ## Inertia（Laravel前端集成模式）
