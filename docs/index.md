@@ -11,12 +11,9 @@ hero:
       text: 查看文档
       link: /laravel
 
-# features:
-  - title: Agent
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+features:
+  - title: Agent(Claude Code)
+    details: Work with Claude directly in your codebase. Build, debug, and ship from your terminal, IDE, Slack, web, and more
   - title: Laravel
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: 宝塔面板
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
----
+    details: Laravel is batteries-included so everyone can build and ship web apps at ridiculous speed.
 
