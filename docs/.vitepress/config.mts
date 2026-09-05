@@ -5,8 +5,6 @@ export default defineConfig({
   title: "AI coding开发手册",
   description: "A VitePress Site",
   themeConfig: {
-    siteTitle: 'My Custom Title',
-    // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Examples', link: '/markdown-examples' }
@@ -30,6 +28,7 @@ export default defineConfig({
       },
       {
         text: 'Agent',
+        collapsed: false,
         items: [
           { text: 'Markdown Examples', link: '/markdown-examples' },
           { text: 'Runtime API Examples', link: '/api-examples' },
