@@ -12,7 +12,7 @@ hero:
       link: /laravel
 
 features:
-  - icon
+  - icon:
       src: /cool-feature-icon.svg
     title: Agent (Claude Code)
     details: Work with Claude directly in your codebase. Build, debug, and ship from your terminal, IDE, Slack, web, and more
