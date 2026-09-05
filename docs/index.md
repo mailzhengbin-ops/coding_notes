@@ -18,4 +18,4 @@ features:
     details: Laravel is batteries-included so everyone can build and ship web apps at ridiculous speed.
 ---
 
-![avatar](/IMG_20260808_151132.jpg)
+mycontent
