@@ -21,6 +21,7 @@ export default defineConfig({
       },
       {
         text: 'Laravel',
+        collapsed: false,
         items: [
           { text: '项目搭建', link: '/laravel' },
           { text: '目录结构', link: '/markdown-examples' },
