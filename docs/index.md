@@ -17,5 +17,5 @@ features:
     title: Agent (Claude Code)
     details: Work with Claude directly in your codebase. Build, debug, and ship from your terminal, IDE, Slack, web, and more
   - title: Laravel
-    details: Laravel is batteries-included so everyone can build and ship web apps at ridiculous speed.
+    details: Laravel is batteries-included so everyone can build and ship web apps at ridiculous speed
 ---
