@@ -5,6 +5,7 @@ export default defineConfig({
   title: "AI coding开发手册",
   description: "A VitePress Site",
   themeConfig: {
+    siteTitle: 'My Custom Title'
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
