@@ -5,7 +5,8 @@
 ## 查询构造器
 ## 工厂类
 > 生成模拟数据
-创建UserFactory工厂类，生成user测试数据
+
+创建UserFactory工厂类，负责定义 User 模型的模拟数据生成规则
 ```php
 class UserFactory extends Factory
 {
@@ -18,7 +19,7 @@ class UserFactory extends Factory
     }
 }
 ```
-生成user表的一条数据，并插入到表中
+将生成的数据插入 users 表。
 ```php
 User::factory()->create()
 ```
@@ -53,5 +54,8 @@ return new class extends Migration
     }
 };
 ```
+```php
 执行迁移（up函数）：php artisan migrate
 执行回滚（down函数）：php artisan migrate:rollback
+```
+
