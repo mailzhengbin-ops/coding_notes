@@ -54,7 +54,15 @@ class UserFactory extends Factory
 ```
 将生成的数据插入 users 表
 ```php
+##
+// 按 definition 规则生成 1条 users表数据
 User::factory()->create()
+
+// 按 definition 规则生成 10条 users表数据
+User::factory()->count(10)->create()
+
+按definition+admin定义的规则，生成 1条 users表数据
+User::factory()->admin()->create();
 ```
 ## 数据库填充（/seeders）
 > 给数据库填充数据
