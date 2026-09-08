@@ -3,9 +3,25 @@
 ## 主键、外键和外键约束
 ## Eloquent ORM
 ## 查询构造器
+## 工厂类
+> 生成模拟数据
+```php
+class UserFactory extends Factory
+{
+    public function definition(): array
+    {
+        return [
+            'name' => fake()->name(),
+            'email' => fake()->safeEmail(),
+        ];
+    }
+}
+```
+如上不会自动执行，需要User::factory()->create()插入
 ## 数据库填充
-## 数据库迁移
-
+> 给数据库填充数据
+## 数据库迁移（/Migrations）
+> 定义数据库结构
 ```php
 // 2026_09_08_120000_create_users_table.php
 
