@@ -58,3 +58,32 @@ User::factory()->create()
 ```
 ## 数据库填充（/seeders）
 > 给数据库填充数据
+
+```php
+class UserSeeder extends Seeder
+{
+    // 执行数据填充
+    public function run(): void
+    {
+        // 1. 创建固定数据
+        User::create([
+            'name' => '管理员',
+            'email' => 'admin@example.com',
+        ]);
+
+        // 2. 或者使用 Factory 创建模拟数据
+        User::factory()->count(10)->create();
+
+        // 3. 或者调用其他方法
+        $this->seedSomething();
+    }
+
+    /**
+     * 其他数据填充逻辑。
+     */
+    private function seedSomething(): void
+    {
+        // ...
+    }
+}
+```
