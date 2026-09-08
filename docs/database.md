@@ -5,6 +5,7 @@
 ## 查询构造器
 ## 工厂类
 > 生成模拟数据
+创建UserFactory工厂类，生成user测试数据
 ```php
 class UserFactory extends Factory
 {
@@ -17,7 +18,10 @@ class UserFactory extends Factory
     }
 }
 ```
-如上不会自动执行，需要User::factory()->create()插入
+生成user表的一条数据，并插入到表中
+```php
+User::factory()->create()
+```
 ## 数据库填充
 > 给数据库填充数据
 ## 数据库迁移（/Migrations）
