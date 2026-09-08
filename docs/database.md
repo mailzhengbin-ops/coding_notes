@@ -28,6 +28,7 @@ return new class extends Migration
     // 回滚迁移时干什么
     public function down(): void
     {
+        // 如果users表存在，就把他删除
         Schema::dropIfExists('users');
     }
 };
