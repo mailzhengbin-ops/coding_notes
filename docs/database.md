@@ -3,10 +3,10 @@
 ## 主键、外键和外键约束
 ## Eloquent ORM
 ## 查询构造器
-## 工厂类
-> 生成模拟数据
+## 工厂类（/factories）
+> 生成数据表的模拟数据
 
-创建UserFactory工厂类，负责定义 User 模型的模拟数据生成规则
+创建 UserFactory 工厂类，负责定义 User 模型（users表）的模拟数据生成规则
 ```php
 class UserFactory extends Factory
 {
@@ -19,13 +19,13 @@ class UserFactory extends Factory
     }
 }
 ```
-将生成的数据插入 users 表。
+将生成的数据插入 users 表
 ```php
 User::factory()->create()
 ```
-## 数据库填充
+## 数据库填充（/seeders）
 > 给数据库填充数据
-## 数据库迁移（/Migrations）
+## 数据库迁移（/migrations）
 > 定义数据库结构
 ```php
 // 2026_09_08_120000_create_users_table.php
