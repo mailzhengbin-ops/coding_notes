@@ -1,6 +1,4 @@
-# 表设计
 
-## 主键、外键和外键约束
 ## Eloquent ORM
 ## 查询构造器
 ## 数据库迁移（/migrations）
@@ -32,7 +30,7 @@ return new class extends Migration
     }
 };
 ```
-```php
+```
 执行迁移（up函数）：php artisan migrate
 执行回滚（down函数）：php artisan migrate:rollback
 ```
@@ -43,12 +41,22 @@ return new class extends Migration
 ```php
 class UserFactory extends Factory
 {
+    // 默认规则
     public function definition(): array
     {
         return [
             'name' => fake()->name(),
             'email' => fake()->safeEmail(),
+            'is_admin' => false,
         ];
+    }
+
+    // 管理员规则
+    public function admin(): static
+    {
+        return $this->state([
+            'is_admin' => true,
+        ]);
     }
 }
 ```
@@ -73,22 +81,20 @@ class UserSeeder extends Seeder
     // 执行数据填充
     public function run(): void
     {
-        // 1. 创建固定数据
+        // 1. 使用如下规则创建模拟数据
         User::create([
             'name' => '管理员',
             'email' => 'admin@example.com',
         ]);
 
-        // 2. 或者使用 Factory 创建模拟数据
+        // 2. 使用 Factory 创建模拟数据
         User::factory()->count(10)->create();
 
-        // 3. 或者调用其他方法
+        // 3. 调用其他方法创建模拟数据
         $this->seedSomething();
     }
 
-    /**
-     * 其他数据填充逻辑。
-     */
+    // 其他数据填充逻辑。
     private function seedSomething(): void
     {
         // ...
