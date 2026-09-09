@@ -10,7 +10,7 @@
 
 return new class extends Migration
 {
-    // 执行迁移时干什么
+    // 执行迁移时做什么
     public function up(): void
     {
         // 创建users表，定义字段
@@ -22,7 +22,7 @@ return new class extends Migration
         });
     }
 
-    // 回滚迁移时干什么
+    // 回滚迁移时做什么
     public function down(): void
     {
         // 如果users表存在，就把他删除
