@@ -8,6 +8,10 @@ export default defineConfig({
       pattern: 'https://github.com/mailzhengbin-ops/coding_notes/edit/master/docs/:path',
       text: '在 GitHub 上编辑此页'
     },
+    docFooter: {
+      prev: '上一篇',
+      next: '下一篇'
+    },
     search: {
       provider: 'local'
     },
