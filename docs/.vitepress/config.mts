@@ -4,6 +4,9 @@ export default defineConfig({
   title: "AI coding开发手册",
   description: "A VitePress Site",
   themeConfig: {
+    editLink: {
+      pattern: 'https://github.com/vuejs/vitepress/edit/main/docs/:path'
+    },
     search: {
       provider: 'local'
     },
