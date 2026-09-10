@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-## 配置powershell代理
+## 代理代理
 ```powershell
 # 启动
 $env:HTTP_PROXY="http://127.0.0.1:7897"
@@ -11,8 +11,8 @@ $env:HTTPS_PROXY="http://127.0.0.1:7897"
 echo $env:HTTP_PROXY
 echo $env:HTTPS_PROXY
 ```
-Git命令
-```git
+## Git管理
+```bash
 # 初始化git仓库
 git init
 
