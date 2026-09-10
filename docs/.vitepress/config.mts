@@ -4,6 +4,8 @@ export default defineConfig({
   title: "AI coding开发手册",
   description: "A VitePress Site",
   themeConfig: {
+    sidebarMenuLabel: '菜单',
+    outlineTitle: '本页目录',
     editLink: {
       pattern: 'https://github.com/mailzhengbin-ops/coding_notes/edit/master/docs/:path',
       text: '在 GitHub 上编辑此页'
@@ -19,7 +21,6 @@ export default defineConfig({
       { text: 'Home', link: '/' },
       { text: 'Examples', link: '/markdown-examples' }
     ],
-
     sidebar: [
       {
         text: '杂项',
