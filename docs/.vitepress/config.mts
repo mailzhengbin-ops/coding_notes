@@ -38,6 +38,7 @@ export default defineConfig({
           { text: '数据库', link: '/database' },
           { text: '目录结构', link: '/markdown-examples' },
           { text: '部署上线', link: '/deployment' },
+          { text: '民法', link: '/civil' },
         ]
       },
       {
