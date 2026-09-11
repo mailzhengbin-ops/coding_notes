@@ -3,7 +3,7 @@
 ## 环境安装
 以下指令安装php、composer、laravel installer（laravel.new提供）
 
-```powershell
+```bash
 # 指令
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://php.new/install/windows/8.5'))
 
@@ -17,14 +17,14 @@ Web服务器默认采用php内置的开发服务器，通过`php artisan serve`�
 
 ## Starter Kits开发套件
 
-```powershell
+```bash
 # 执行Laravel初始化指令，选择Starter Kits开发套件
 laravel new example-app
 ```
 
 ## 项目构建
 
-```powershell
+```bash
 # 安装前端npm依赖，打包前端文件
 npm install && npm run build
 
