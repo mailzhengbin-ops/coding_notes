@@ -1,4 +1,43 @@
-# 项目结构
+## 服务类、服务提供商、服务容器
+
+服务类
+```php
+class CardService
+{
+    public function getCard(int $cardId): string
+    {
+        return "这是卡片 {$cardId}";
+    }
+}
+```
+
+服务提供者
+```php
+class AppServiceProvider extends ServiceProvider
+{
+    public function register(): void
+    {
+        $this->app->singleton(CardService::class, function () {
+            return new CardService();
+        });
+    }
+}
+```
+如何使用
+
+```
+class ReciteController extends Controller
+{
+    public function __construct(
+        private CardService $cardService
+    ) {}
+
+    public function show()
+    {
+        return $this->cardService->getCard(1);
+    }
+}
+```
 
 
 ```md
