@@ -35,6 +35,7 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: '项目启动', link: '/laravel' },
+          { text: '前端', link: '/frontend' },
           { text: '数据库', link: '/database' },
           { text: '目录结构', link: '/markdown-examples' },
           { text: '部署上线', link: '/deployment' },
