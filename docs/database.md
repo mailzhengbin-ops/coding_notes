@@ -10,12 +10,9 @@ $user = User::find(1)
 ## 数据库迁移（/migrations）
 > 创建数据库结构（表+字段）
 
+迁移文件结构
 ```php
 // 2026_09_08_120000_create_users_table.php
-
-<?php
-
-迁移文件结构
 return new class extends Migration
 {
     // 执行迁移时做什么
