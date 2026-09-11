@@ -54,52 +54,6 @@ import AuthLayoutTemplate from '@/layouts/auth/auth-split-layout';
 ```
 
 
-## Inertia（Laravel前端集成模式）
-> Starter Kits套件自带，使用服务器端路由（无需前端路由）开发 React单页应用程序 (SPA)，实现前后端一体化（单体架构），进而避免繁杂的前后端分离
-
-使用 Inertia::render 方法 返回 users/index 这个 React 页面组件，并把 $users 作为 users 数据传给它。”
-
-工作原理：用户浏览器请求`/user`路由→ `/user`路由把全球分发给Controller 处理或者闭包处理 → Controller或闭包通过`Inertia::render('页面组件', [数据])`告诉Inertia 返回指定的React页面组件（`Users/Index`）和数据（`message`） → react渲染页面`resources/js/Pages/Users/Index.tsx`
-
-**Laravel Route 的两种页面处理方式**
-
-```php
-// 交给闭包处理
-Route::get('/users', function () {
-    return Inertia::render('Users/Index', [
-        'message' => '这是用户列表页面',
-    ]);
-})
-
-// 交给控制器处理
-Route::get('/users', [UserController::class, 'index']);
-class UserController extends Controller
-{
-    public function index()
-    {
-        return Inertia::render('Users/Index', [
-            'message' => '这是 Controller 返回的用户列表',
-        ]);
-    }
-}
-```
-
-| eslint.config.js（TS/JS） | JS/TS 代码的静态检查工具，用来在写代码时就发现错误、强制代码风格统一 |
-| --- | --- |
-| pint.json（PHP） | Laravel 官方的 PHP 代码格式化工具 |
-| phpunit.xml | PHPUnit 是一个PHP的自动化测试框架，这是配置文件 |
-
-
-```php
-# Pages/Layouts/Components
-├── resources/
-│   ├── js/                 # React项目文件夹
-│   │   ├── Pages/          # 页面组件：是通常对应 Laravel 的一个路由。
-│   │   ├── Components/     # 公共组件：由shadcn/ui基于tailwindcss封装
-│   │   ├── Layouts/        # 页面布局：是多个页面共同使用的外壳布局
-│   │   └── app.tsx         # React 入口
-│   └── css/
-```
 
 ## Migration 和 Eloquent ORM
 > Migration 通过迁移文件cur表结构（表、字段、索引）；Eloquent 通过Model curd表数据
@@ -145,7 +99,7 @@ $post = Post::create([
 $posts = Post::all();
 
 // U：修改
-$post = Post::find(1);
+$post = Post::find();
 $post->title = 'Laravel 教程';
 $post->save();
 
