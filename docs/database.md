@@ -4,6 +4,7 @@ Laravel使用原生sql、查询构造器、Eloquent ORM 三种方式与数据库
 ## Eloquent ORM
 Laravel 提供的对象关系映射工具，它把 PHP 模型/对象与数据库表/记录建立映射，使我们可以通过 PHP 对象和方法来操作数据库，而不必直接编写大量 SQL
 
+例如
 ```php
 $users = User::where('age', '>', 18)->get();
 ```
