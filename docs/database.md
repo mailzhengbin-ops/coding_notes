@@ -15,6 +15,7 @@ $user = User::find(1)
 
 <?php
 
+迁移文件结构
 return new class extends Migration
 {
     // 执行迁移时做什么
@@ -37,7 +38,7 @@ return new class extends Migration
     }
 };
 ```
-
+迁移操作
 ```bash
 执行迁移（up函数）：php artisan migrate
 执行回滚（down函数）：php artisan migrate:rollback
