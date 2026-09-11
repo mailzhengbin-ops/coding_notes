@@ -9,6 +9,15 @@ $user = User::find(1)
 调用User模型类（对应users表）的find静态方法（这个方法由继承自内置的model），find方法内部执行类的实例化操作并返回给对象模型$user（对应user表中的一条记录）
 
 ## 查询构造器
+
+```php
+$users = DB::table('users')
+    ->where('age', '>', 18)
+    ->get();
+
+SELECT * FROM users WHERE age > 18
+```
+
 ## 数据库迁移（/migrations）
 > 创建数据库结构（表+字段）
 
