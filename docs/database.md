@@ -2,11 +2,12 @@
 Laravel使用原生sql、查询构造器、Eloquent ORM 三种方式与数据库交互
 
 ## Eloquent ORM
-Laravel 提供的对象关系映射工具，它把 PHP 模型/对象与数据库表/记录建立映射，使我们可以通过 PHP 对象和方法来操作数据库，而不必直接编写大量 SQL。
+Laravel 提供的对象关系映射工具，它把 PHP 模型/对象与数据库表/记录建立映射，使我们可以通过 PHP 对象和方法来操作数据库，而不必直接编写大量 SQL
+
 ```php
-$user = User::find(1)
+$users = User::where('age', '>', 18)->get();
 ```
-调用User模型类（对应users表）的find静态方法（这个方法由继承自内置的model），find方法内部执行类的实例化操作并返回给对象模型$user（对应user表中的一条记录）
+说明：调用User模型类（对应users表）的where静态方法（这个方法由继承自内置的model），where方法内部执行类的实例化操作并返回给对象模型$user（对应user表中age大于18的全部用户）
 
 ## 查询构造器
 
