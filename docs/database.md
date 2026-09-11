@@ -1,6 +1,19 @@
 # 数据库
 Laravel使用原生sql、查询构造器、Eloquent ORM 三种方式与数据库交互
 
+## 查询构造器
+用PHP方法操作数据库的工具
+
+```php
+// 查询构造器
+$users = DB::table('users')
+    ->where('age', '>', 18)
+    ->get();
+
+// 原生sql
+SELECT * FROM users WHERE age > 18
+```
+
 ## Eloquent ORM
 Laravel 提供的对象关系映射工具，它把 PHP 模型/对象与数据库表/记录建立映射，使我们可以通过 PHP 对象和方法来操作数据库，而不必直接编写大量 SQL
 
@@ -9,16 +22,6 @@ Laravel 提供的对象关系映射工具，它把 PHP 模型/对象与数据库
 $users = User::where('age', '>', 18)->get();
 ```
 说明：调用User模型类（对应users表）的where静态方法（这个方法由继承自内置的model），where方法内部执行类的实例化操作并返回给对象模型$user（对应user表中age大于18的全部用户）
-
-## 查询构造器
-
-```php
-$users = DB::table('users')
-    ->where('age', '>', 18)
-    ->get();
-
-SELECT * FROM users WHERE age > 18
-```
 
 ## 数据库迁移（/migrations）
 > 创建数据库结构（表+字段）
