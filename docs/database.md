@@ -8,7 +8,8 @@ $user = User::find(1)
 
 ## 查询构造器
 ## 数据库迁移（/migrations）
-> 定义数据库结构
+> 创建数据库结构（表+字段）
+
 ```php
 // 2026_09_08_120000_create_users_table.php
 
@@ -36,7 +37,8 @@ return new class extends Migration
     }
 };
 ```
-```
+
+```bash
 执行迁移（up函数）：php artisan migrate
 执行回滚（down函数）：php artisan migrate:rollback
 ```
