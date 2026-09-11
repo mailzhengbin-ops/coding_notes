@@ -56,7 +56,8 @@ import AuthLayoutTemplate from '@/layouts/auth/auth-split-layout';
 
 ## Inertia（Laravel前端集成模式）
 > Starter Kits套件自带，使用服务器端路由（无需前端路由）开发 React单页应用程序 (SPA)，实现前后端一体化（单体架构），进而避免繁杂的前后端分离
->
+
+使用 Inertia::render 方法 返回 users/index 这个 React 页面组件，并把 $users 作为 users 数据传给它。”
 
 工作原理：用户浏览器请求`/user`路由→ `/user`路由把全球分发给Controller 处理或者闭包处理 → Controller或闭包通过`Inertia::render('页面组件', [数据])`告诉Inertia 返回指定的React页面组件（`Users/Index`）和数据（`message`） → react渲染页面`resources/js/Pages/Users/Index.tsx`
 
