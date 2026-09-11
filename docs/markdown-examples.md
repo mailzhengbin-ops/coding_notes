@@ -1,6 +1,8 @@
 ## 服务类、服务提供商、服务容器
 
 服务类
+真正干活的类
+> 例：用户给一个 card_id，CardService 负责查询卡片并返回卡片信息
 ```php
 class CardService
 {
@@ -12,12 +14,16 @@ class CardService
 ```
 
 服务提供者
+
+例：我要注册CardService服务类到服务容器，调用处需要该类时，返回该服务类的对象
 ```php
 class AppServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
+        // 第一个参数是要注册的服务类，第二个参数是需要该类时应该如何创建
         $this->app->singleton(CardService::class, function () {
+            // 告诉容器：需要 CardService 时怎么创建它
             return new CardService();
         });
     }
