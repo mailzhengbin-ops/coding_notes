@@ -16,7 +16,7 @@ Cache::get('name');
 
 // 使用DB服务
 DB::table('users')->get();
-```php
+```
 
 ## 服务类、服务提供商、服务容器
 ### 服务（类）
