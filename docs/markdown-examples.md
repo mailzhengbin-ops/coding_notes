@@ -1,11 +1,25 @@
-## 依赖注入和Facade
+## 服务使用方式：依赖注入或Facade
 依赖注入和 Facade 都是 Laravel 使用服务的一种方式
+依赖注入方式
+```php
+// 使用UserService服务
+public function store(UserService $service)
+{
+    $service->register();
+}
+```
+Facade方式
+```php
+// 使用Cache服务
+Cache::get('name');
+
+// 使用DB服务
+DB::table('users')->get();
+```php
 
 ## 服务类、服务提供商、服务容器
-
-### 服务类
+### 服务（类）
 真正干活的类
-
 > 例：CardService服务类，用户给一个 card_id，该服务类负责查询卡片并返回卡片信息
 ```php
 class CardService
@@ -18,7 +32,8 @@ class CardService
 ```
 
 ### 服务提供者
-例：我要注册CardService服务类到服务容器，调用处需要该类时，返回该服务类的对象
+用于向服务提供者注册服务（类）并告知如何使用
+> 例：我要注册CardService服务类到服务容器，调用处需要该类时，返回该服务类的对象
 ```php
 class AppServiceProvider extends ServiceProvider
 {
