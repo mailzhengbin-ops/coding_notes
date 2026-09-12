@@ -1,5 +1,6 @@
 ## 服务使用方式：依赖注入或Facade
 依赖注入和 Facade 都是 Laravel 使用服务的一种方式
+
 依赖注入方式
 ```php
 // 使用UserService服务
