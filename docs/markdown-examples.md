@@ -1,3 +1,6 @@
+## 依赖注入和Facade
+依赖注入和 Facade 都是 Laravel 使用服务的一种方式
+
 ## 服务类、服务提供商、服务容器
 
 ### 服务类
@@ -15,7 +18,6 @@ class CardService
 ```
 
 ### 服务提供者
-
 例：我要注册CardService服务类到服务容器，调用处需要该类时，返回该服务类的对象
 ```php
 class AppServiceProvider extends ServiceProvider
@@ -30,6 +32,7 @@ class AppServiceProvider extends ServiceProvider
     }
 }
 ```
+> 用户在 app/Services 中定义的普通服务类，通常不需要通过 Service Provider 注册，因为 Laravel 服务容器能够自动解析和实例化普通具体类
 
 ### 服务类使用
 ```php
@@ -46,7 +49,7 @@ class ReciteController extends Controller
 }
 ```
 
-```md
+```bash
 app/
 │
 ├── Http/
