@@ -1,5 +1,10 @@
 # 部署上线
 > 基于宝塔面板部署
+
+查看当前项目前基本信息
+```bash
+php artisan about
+```
 ## 依赖安装
 安装composer和npm包
 ```
