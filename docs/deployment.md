@@ -74,6 +74,12 @@ Laravel 需要写入 `/ bootstrap/cacheetc storage/webserver ...
 ```bash
 php artisan storage:link
 ```
+
+## 关闭debug
+```bash
+APP_ENV=production
+APP_DEBUG=false
+```
 ## 配置nginx
 官方推荐的nginx站点配置，生产环境需要替换为自己的站点信息
 ```nginx
