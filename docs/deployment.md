@@ -7,7 +7,7 @@ php artisan about
 ```
 ## 依赖安装
 安装composer和npm包
-```
+```bash
 composer install --no-dev --optimize-autoloader
 
 npm run build
@@ -15,7 +15,7 @@ npm run build
 注意：服务器需要有composer和node.js、npm
 ## 创建APP_KEY
 执行如下命令，自动在.env文件中生成APP_KEY配置
-```
+```bash
 php artisan key:generate
 ```
 
@@ -42,7 +42,7 @@ php artisan key:generate
 ## 数据库选择与迁移
 
 由于Laravel默认采用sqlite，如更换数据库需要到.env文件中切换数据库，更改连接配置
-```
+```bash
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
@@ -51,17 +51,17 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 并且重新执行数据库迁移
-```
+```bash
 php artisan migrate
 ```
 
 ## 优化缓存
 把 Laravel 运行时需要读取和解析的信息（config、event、route、view）提前生成缓存，从而让生产环境启动和请求处理更快
-```
+```bash
 php artisan optimize
 ```
 清除缓存
-```
+```bash
 php artisan optimize:clear
 ```
 注意：每次修改配置后需要重新执行，避免加载旧配置
@@ -71,7 +71,7 @@ Laravel 需要写入 `/ bootstrap/cacheetc storage/webserver ...
 
 ## 创建软链接
 在public/storage创建软链指向storage/app/public
-```
+```bash
 php artisan storage:link
 ```
 ## 配置nginx
