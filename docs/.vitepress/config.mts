@@ -43,6 +43,12 @@ export default defineConfig({
         ]
       },
       {
+        text: '性能优化',
+        items: [
+          { text: '性能优化', link: '/api-examples' },
+        ]
+      },
+      {
         text: 'Agent',
         collapsed: false,
         items: [
