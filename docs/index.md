@@ -4,8 +4,8 @@ layout: home
 
 hero:
   name: "全栈开发手册"
-  text: "基于AI+Laravel"
-  tagline: My great project tagline
+  text: "Laravel+Nest.js"
+  tagline: 多样化技术栈笔记
   actions:
     - theme: brand
       text: 查看文档
