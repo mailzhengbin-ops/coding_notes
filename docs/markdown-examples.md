@@ -24,6 +24,8 @@ $app = require_once __DIR__.'/../bootstrap/app.php';
 $app->handleRequest(Request::capture());
 ```
 `autoload.php` 是composer的自动加载器，当调用处需要某个类时实现自动加载
+>小补充：注册自动加载器后，可以把类加载到任何地方需要使用的地方，只不过只不过new类时需要用完整命名空间，比如new App\Models\User()，此时可以用use App\Models\User来取别名使用，此时直接new User()即可使用，需要注意的是use并不会加载文件，真正的文件加载是依靠autoload.php
+
 `bootstrap/app.php`是Laravel应用启动引导文件，它负责实例化并配置Application类，通常把结果返回给$app对象，此对象即服务容器
 ## 服务使用方式：依赖注入或Facade
 依赖注入和 Facade 都是 Laravel 使用服务的一种方式
