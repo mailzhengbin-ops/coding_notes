@@ -26,10 +26,10 @@ $app->handleRequest(Request::capture());
 `autoload.php` 是composer的自动加载器，当调用处需要某个类时实现自动加载
 >小补充：注册自动加载器后，可以把类加载到任何地方需要使用的地方，只不过只不过new类时需要用完整命名空间，比如new App\Models\User()，此时可以用use App\Models\User来取别名使用，此时直接new User()即可使用，需要注意的是use并不会加载文件，真正的文件加载是依靠autoload.php
 
-`bootstrap/app.php`是Laravel应用启动引导文件，它负责实例化并配置Application类，通常把结果返回给$app对象，此对象即服务容器
+`bootstrap/app.php`是Laravel应用启动引导文件，它负责创建Application，通常把结果返回给$app对象，此对象即服务容器
 
 ### kencel
-传入handleRequest方法的请求会发送到[Kernel内核](https://github.com/laravel/framework/blob/13.x/src/Illuminate/Foundation/Http/Kernel.php?utm_source=chatgpt.com)处理（其为所有请求流经都中心），其会通过bootstrappers数组执行一系列引导程序去配置错误处理、日志记录、检测应用程序环境、加载服务提供者等...
+传入handleRequest方法的请求会发送到[Kernel内核](https://github.com/laravel/framework/blob/13.x/src/Illuminate/Foundation/Http/Kernel.php?utm_source=chatgpt.com)处理（其为所有请求流经都中心），其会通过bootstrappers数组执行一系列引导程序去启动和初始化 Application，包括加载环境变量、加载配置、设置异常处理机制、注册 Facade、注册并启动Service Provider
 
 ## 服务使用方式：依赖注入或Facade
 依赖注入和 Facade 都是 Laravel 使用服务的一种方式
