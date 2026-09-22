@@ -29,7 +29,7 @@ $app->handleRequest(Request::capture());
 `bootstrap/app.php`是Laravel应用启动引导文件，它负责实例化并配置Application类，通常把结果返回给$app对象，此对象即服务容器
 
 ### kencel
-传入handleRequest方法的请求会发送到 HTTP内核处理（其为所有请求流经都中心），其会通过bootstrappers数组执行一系列引导程序去配置错误处理、日志记录、检测应用程序环境、加载服务提供者等...
+传入handleRequest方法的请求会发送到[Kernel内核](https://github.com/laravel/framework/blob/13.x/src/Illuminate/Foundation/Http/Kernel.php?utm_source=chatgpt.com)处理（其为所有请求流经都中心），其会通过bootstrappers数组执行一系列引导程序去配置错误处理、日志记录、检测应用程序环境、加载服务提供者等...
 
 ## 服务使用方式：依赖注入或Facade
 依赖注入和 Facade 都是 Laravel 使用服务的一种方式
