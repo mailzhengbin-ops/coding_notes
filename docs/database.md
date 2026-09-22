@@ -23,7 +23,7 @@ $users = User::where('age', '>', 18)->get();
 ```
 说明：调用User模型类（对应users表）的where静态方法（这个方法由继承自内置的model），where方法内部执行类的实例化操作并返回给对象模型$user（对应user表中age大于18的全部用户）
 
-## 数据库迁移（/migrations）
+## 迁移文件（/migrations）
 > 创建数据库结构（表+字段）
 
 迁移文件结构
