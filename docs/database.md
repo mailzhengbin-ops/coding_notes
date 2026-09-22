@@ -24,9 +24,9 @@ $users = User::where('age', '>', 18)->get();
 说明：调用User模型类（对应users表）的where静态方法（这个方法由继承自内置的model），where方法内部执行类的实例化操作并返回给对象模型$user（对应user表中age大于18的全部用户）
 
 ## 迁移文件（/migrations）
-> 创建数据库结构（表+字段）
+用于创建数据库表结构
+> 例：创建users表，添加id、name、email、created_at、updated_at字段
 
-迁移文件结构
 ```php
 // 2026_09_08_120000_create_users_table.php
 return new class extends Migration
@@ -57,9 +57,9 @@ return new class extends Migration
 执行回滚（down函数）：php artisan migrate:rollback
 ```
 ## 模型工厂（/factories）
-> 定义某张表的模拟数据生成规则
+定义某张表的模拟数据生成规则
+> 例：创建 UserFactory 工厂类，负责定义 User 模型（users表）的模拟数据生成规则
 
-例：创建 UserFactory 工厂类，负责定义 User 模型（users表）的模拟数据生成规则
 ```php
 class UserFactory extends Factory
 {
@@ -95,7 +95,7 @@ User::factory()->count(10)->create()
 User::factory()->admin()->create();
 ```
 ## 种子数据（/seeders）
-> 给数据库填充数据
+给数据库填充数据
 
 ```php
 class UserSeeder extends Seeder
