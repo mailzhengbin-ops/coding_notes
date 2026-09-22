@@ -53,8 +53,10 @@ return new class extends Migration
 ```
 迁移操作
 ```bash
-执行迁移（up函数）：php artisan migrate
-执行回滚（down函数）：php artisan migrate:rollback
+# 执行迁移（up函数）
+php artisan migrate
+# 执行回滚（down函数）
+php artisan migrate:rollback
 ```
 ## 模型工厂（/factories）
 定义某张表的模拟数据生成规则
