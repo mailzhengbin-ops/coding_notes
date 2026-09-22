@@ -57,9 +57,9 @@ return new class extends Migration
 执行回滚（down函数）：php artisan migrate:rollback
 ```
 ## 模型工厂（/factories）
-> 定义表中模拟数据的规则
+> 定义某张表的模拟数据生成规则
 
-创建 UserFactory 工厂类，负责定义 User 模型（users表）的模拟数据生成规则
+例：创建 UserFactory 工厂类，负责定义 User 模型（users表）的模拟数据生成规则
 ```php
 class UserFactory extends Factory
 {
