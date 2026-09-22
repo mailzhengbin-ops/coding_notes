@@ -56,7 +56,7 @@ return new class extends Migration
 执行迁移（up函数）：php artisan migrate
 执行回滚（down函数）：php artisan migrate:rollback
 ```
-## 工厂类（/factories）
+## 模型工厂（/factories）
 > 生成数据表的模拟数据
 
 创建 UserFactory 工厂类，负责定义 User 模型（users表）的模拟数据生成规则
@@ -94,7 +94,7 @@ User::factory()->count(10)->create()
 按definition+admin定义的规则，生成 1条 users表数据
 User::factory()->admin()->create();
 ```
-## 数据库填充（/seeders）
+## 种子数据（/seeders）
 > 给数据库填充数据
 
 ```php
