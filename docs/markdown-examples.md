@@ -1,6 +1,17 @@
 # 设计思想
 ## 一个请求的生命周期
-index.php主要负责两件事
+```text
+First Steps
+    ↓
+HTTP / Console Kernels
+    ↓
+Service Providers
+    ↓
+Routing
+    ↓
+Finishing Up
+```
+### index.php
 ```php
 // 1. 注册composer自动加载器
 require __DIR__.'/../vendor/autoload.php';
