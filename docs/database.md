@@ -82,7 +82,8 @@ class UserFactory extends Factory
     }
 }
 ```
-将生成的数据插入 users 表
+注
+definition方法定义的模拟数据生成规则不会自动插入到数据库中，需要执行create方法插入
 ```php
 ##
 // 按 definition 规则生成 1条 users表数据
@@ -95,7 +96,8 @@ User::factory()->count(10)->create()
 User::factory()->admin()->create();
 ```
 ## 种子数据（/seeders）
-给数据库填充数据
+向数据库填充数据
+> 例：用三种方式填充数据（自定义内容填充管理员用户、按照种子工厂规则填充10个普通用户、在run外定义其他填充规则）
 
 ```php
 class UserSeeder extends Seeder
