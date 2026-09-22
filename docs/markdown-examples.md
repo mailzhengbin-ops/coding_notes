@@ -1,19 +1,19 @@
 ## 一个请求的生命周期
 index.php主要负责两件事
 ```php
-// 1. 注册composer自动加载器｀autoload.php｀，当调用处需要某个类时实现自动加载
+// 1. 注册composer自动加载器
 require __DIR__.'/../vendor/autoload.php';
 
-// 2. 通过｀bootstrap/app.php｀启动Laravel（内部创建Application对象，即服务容器）
+// 2. 通过引导文件启动Laravel应用
 /** @var Application $app */
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
-// 处理请求：捕获到当前请求交给handleRequest方法处理
+// 3. 捕获到当前请求交给handleRequest方法处理
 $app->handleRequest(Request::capture());
 ```
-bootstrap/app.php 是 Laravel 的应用启动/引导文件，它负责创建并配置 Laravel 的 Application 对象；这个对象同时承担服务容器的角色。
-Application（类） = Laravel 整个应用的核心对象
-同时它也是 Service Container（服务容器）
+｀autoload.php｀是composer的自动加载器，当调用处需要某个类时实现自动加载
+｀bootstrap/app.php｀ 是 Laravel 的应用启动引导文件，它负责创建并配置 Laravel 的 Application 对象，此对象即服务容器
+
 ## 服务使用方式：依赖注入或Facade
 依赖注入和 Facade 都是 Laravel 使用服务的一种方式
 
