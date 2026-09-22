@@ -5,7 +5,7 @@ index.php主要负责两件事
 // 1. 注册composer自动加载器
 require __DIR__.'/../vendor/autoload.php';
 
-// 2. 通过引导文件启动Laravel应用
+// 2. 通过引导文件创建Laravel应用（服务容器）的实例
 /** @var Application $app */
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
@@ -13,7 +13,7 @@ $app = require_once __DIR__.'/../bootstrap/app.php';
 $app->handleRequest(Request::capture());
 ```
 `autoload.php` 是composer的自动加载器，当调用处需要某个类时实现自动加载
-`bootstrap/app.php`是Laravel应用启动引导文件，它负责实例化并配置Application对象，通常把结果返回给$app对象，此对象即服务容器
+`bootstrap/app.php`是Laravel应用启动引导文件，它负责实例化并配置Application类，通常把结果返回给$app对象，此对象即服务容器
 ## 服务使用方式：依赖注入或Facade
 依赖注入和 Facade 都是 Laravel 使用服务的一种方式
 
