@@ -1,3 +1,16 @@
+## 一个请求的生命周期
+```php
+// 注册composer自动加载器，当调用处需要某个类时实现自动加载
+require __DIR__.'/../vendor/autoload.php';
+
+// 启动Laravel并处理请求
+/** @var Application $app */
+$app = require_once __DIR__.'/../bootstrap/app.php';
+
+// 捕获到当前请求交给handleRequest方法处理
+$app->handleRequest(Request::capture());
+```
+
 ## 服务使用方式：依赖注入或Facade
 依赖注入和 Facade 都是 Laravel 使用服务的一种方式
 
