@@ -94,7 +94,7 @@ User::factory()->create()
 // 按 definition 规则生成 10条 users表数据
 User::factory()->count(10)->create()
 
-按definition+admin定义的规则，生成 1条 users表数据
+// 按 definition+admin 定义的规则，生成 1条 users表数据
 User::factory()->admin()->create();
 ```
 ## 种子数据（/seeders）
