@@ -11,8 +11,8 @@ $app = require_once __DIR__.'/../bootstrap/app.php';
 // 3. 捕获到当前请求交给handleRequest方法处理
 $app->handleRequest(Request::capture());
 ```
-｀autoload.php｀是composer的自动加载器，当调用处需要某个类时实现自动加载
-｀bootstrap/app.php｀ 是 Laravel 的应用启动引导文件，它负责创建并配置 Laravel 的 Application 对象，此对象即服务容器
+ ｀autoload.php｀ 是composer的自动加载器，当调用处需要某个类时实现自动加载
+ ｀bootstrap/app.php｀ 是 Laravel 的应用启动引导文件，它负责创建并配置 Laravel 的 Application 对象，此对象即服务容器
 
 ## 服务使用方式：依赖注入或Facade
 依赖注入和 Facade 都是 Laravel 使用服务的一种方式
