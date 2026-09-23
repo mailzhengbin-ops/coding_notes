@@ -36,10 +36,10 @@ export default defineConfig({
         items: [
           { text: '项目启动', link: '/laravel' },
           { text: '设计思想', link: '/markdown-examples' },
+          { text: '部署上线', link: '/deployment' },
+          { text: '接口开发', link: '/api' },
           { text: '前端', link: '/frontend' },
           { text: '数据库', link: '/database' },
-          { text: '部署上线', link: '/deployment' },
-          { text: '民法', link: '/civil' },
         ]
       },
       {
