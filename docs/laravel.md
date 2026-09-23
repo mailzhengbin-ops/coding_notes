@@ -22,7 +22,7 @@ composer -v
 # 执行Laravel初始化指令，从而创建项目
 laravel new example-app
 ```
-创建项目时，可以选择使用Starter Kits开发套件
+创建项目时，可以选择使用[Starter Kits](https://laravel.com/framework/docs/starter-kits)开发套件，其提供了众多开箱即用的功能
 
 ## 项目构建
 
