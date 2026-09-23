@@ -33,5 +33,5 @@ npm install && npm run build
 # 启动laravel开发服务器、vite开发服务器、队列监听器
 composer run dev
 ```
-在开发环境，无需安装npm依赖和打包前端文件，一般使用composer run dev即可
+在开发环境，无需安装npm依赖和打包前端文件，一般使用`composer run dev`即可
 > 注意：项目composer命令只能在`composer.json` 的同级目录运行，全局composer则不需要  
