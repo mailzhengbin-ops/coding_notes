@@ -1,6 +1,4 @@
 # 部署上线
-本章源自[Laravel官方］(https://laravel.com/framework/docs/deployment)，做了适当增补
-
 查看当前项目前基本信息
 ```bash
 php artisan about
