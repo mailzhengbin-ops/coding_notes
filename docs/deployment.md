@@ -15,12 +15,16 @@ npm install
 npm run build
 ```
 注意：服务器需要有composer和node.js（含npm）
+
 ## 创建APP_KEY
-执行如下命令，自动在.env文件中生成APP_KEY配置
+执行如下命令，为项目生成应用加密密钥
 ```bash
 php artisan key:generate
 ```
-
+执行后，在.env文件中生成APP_KEY配置
+```bash
+APP_KEY=base64:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
 ## 扩展和函数
 官方要求必须开启的扩展
 + PHP >= 8.3
