@@ -16,12 +16,13 @@ composer -v
 + Web服务器：默认采用php内置的开发服务器，通过`php artisan serve`启动
 + 数据库：默认采用Laravel内置的sqlite，并且执行了必要的迁移来创建数据库表
 
-## Starter Kits开发套件
+## 创建项目
 
 ```bash
-# 执行Laravel初始化指令，选择Starter Kits开发套件
+# 执行Laravel初始化指令，从而创建项目
 laravel new example-app
 ```
+创建项目时，可以选择使用Starter Kits开发套件
 
 ## 项目构建
 
