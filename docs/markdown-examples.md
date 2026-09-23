@@ -31,7 +31,16 @@ $app->handleRequest(Request::capture());
 `bootstrap/app.php`是Laravel应用启动引导文件，它负责创建Application，通常把结果返回给$app对象，此对象即服务容器
 
 ### Kencel内核处理
-传入handleRequest方法的请求会发送到Kernel内核[（Kernel类的一个实例）](https://github.com/laravel/framework/blob/13.x/src/Illuminate/Foundation/Http/Kernel.php?utm_source=chatgpt.com)处理（其为所有请求流经都中心），其会通过bootstrappers数组执行一系列引导程序去启动和初始化 Application，这些引导程序包括：加载环境变量、加载配置、设置异常处理机制、注册 Facade、**注册并启动Service Provider**
+传入 handleRequest() 方法的请求会交由 Kernel（内核）[（Kernel类的一个实例）](https://github.com/laravel/framework/blob/13.x/src/Illuminate/Foundation/Http/Kernel.php?utm_source=chatgpt.com)处理。Kernel 可以理解为 HTTP 请求进入 Laravel 应用后的重要处理中心。
+
+Kernel 会通过 bootstrappers 数组指定的一系列引导程序（Bootstrapper），对 Application 进行初始化。这些引导程序主要负责：
++ 加载环境变量；
++ 加载配置；
++ 设置异常处理机制；
++ 注册 Facade；
++ 注册并启动 Service Provider；
+
+完成这些引导工作后，Application 才具备处理 HTTP 请求所需的运行环境，随后请求会继续进入 Laravel 的中间件、路由、控制器等处理流程。
 
 ### Service Providers
 同上述，注册并启动Service Providers是Kernel内核最重要的引导操作之一
