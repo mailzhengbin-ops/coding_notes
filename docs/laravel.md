@@ -1,7 +1,7 @@
 # Laravel项目启动
 
 ## 环境安装
-以下指令安装php、composer、laravel installer（laravel.new提供）
+以下指令安装php、composer、laravel installer（[php.new提供](https://php.new/)）
 
 ```bash
 # 指令
