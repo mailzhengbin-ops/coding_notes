@@ -4,10 +4,14 @@
 php artisan about
 ```
 ## 依赖安装
-安装composer和npm包
 ```bash
+# 安装composer包
 composer install --no-dev --optimize-autoloader
 
+# 安装npm包
+npm install
+
+# 打包前端资源
 npm run build
 ```
 注意：服务器需要有composer和node.js、npm
