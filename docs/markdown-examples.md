@@ -14,23 +14,26 @@ Routing
 Finishing Up
 ```
 ### index.php
+1. 注册composer自动加载器
 ```php
-// 1. 注册composer自动加载器
 require __DIR__.'/../vendor/autoload.php';
-
-// 2. 通过引导文件创建Laravel应用（服务容器）的实例
-/** @var Application $app */
-$app = require_once __DIR__.'/../bootstrap/app.php';
-
-// 3. 捕获到当前请求交给handleRequest方法处理
-$app->handleRequest(Request::capture());
 ```
 `autoload.php` 是composer的自动加载器，当调用处需要某个类时实现自动加载
 >小补充：注册自动加载器后，可以把类加载到任何地方需要使用的地方，只不过只不过new类时需要用完整命名空间，比如new App\Models\User()，此时可以用use App\Models\User来取别名使用，此时直接new User()即可使用，需要注意的是use并不会加载文件，真正的文件加载是依靠autoload.php
 
+2. 通过引导文件创建Laravel应用（Application，即服务容器）的实例
+```php
+/** @var Application $app */
+$app = require_once __DIR__.'/../bootstrap/app.php';
+```
 `bootstrap/app.php`是Laravel应用启动引导文件，它负责创建Application，通常把结果返回给$app对象，此对象即服务容器
 
-### Kencel内核处理
+3. 捕获到当前请求交给handleRequest方法处理
+```php
+$app->handleRequest(Request::capture());
+```
+
+### Kernel内核初始化Application
 传入 handleRequest() 方法的请求会交由 Kernel（内核）[（Kernel类的一个实例）](https://github.com/laravel/framework/blob/13.x/src/Illuminate/Foundation/Http/Kernel.php?utm_source=chatgpt.com)处理。Kernel 可以理解为 HTTP 请求进入 Laravel 应用后的重要处理中心。
 
 Kernel 会通过 bootstrappers 数组指定的一系列引导程序（Bootstrapper），对 Application 进行初始化。这些引导程序主要负责：
@@ -40,7 +43,7 @@ Kernel 会通过 bootstrappers 数组指定的一系列引导程序（Bootstrapp
 + 注册 Facade；
 + 注册并启动 Service Provider；
 
-完成这些引导工作后，Application 才具备处理 HTTP 请求所需的运行环境，随后请求会继续进入 Laravel 的中间件、路由、控制器等处理流程。
+完成这些引导工作后，Application初始化完成，随后请求会继续进入 Laravel 的中间件、路由、控制器等处理流程。
 
 ### Service Providers
 同上述，注册并启动Service Providers是Kernel内核最重要的引导操作之一
