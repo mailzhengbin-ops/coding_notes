@@ -16,7 +16,7 @@ Finishing Up
 ### index.php
 1. 注册composer自动加载器
 ```php
-require __DIR__.'/../vendor/autoload.php';
+require __DIR__.'/../vendor/autoload.php'
 ```
 `autoload.php` 是composer的自动加载器，当调用处需要某个类时实现自动加载
 >小补充：注册自动加载器后，可以把类加载到任何地方需要使用的地方，只不过只不过new类时需要用完整命名空间，比如new App\Models\User()，此时可以用use App\Models\User来取别名使用，此时直接new User()即可使用，需要注意的是use并不会加载文件，真正的文件加载是依靠autoload.php
@@ -24,13 +24,13 @@ require __DIR__.'/../vendor/autoload.php';
 2. 通过引导文件创建Laravel应用（Application，即服务容器）的实例
 ```php
 /** @var Application $app */
-$app = require_once __DIR__.'/../bootstrap/app.php';
+$app = require_once __DIR__.'/../bootstrap/app.php'
 ```
 `bootstrap/app.php`是Laravel应用启动引导文件，它负责创建Application，通常把结果返回给$app对象，此对象即服务容器
 
 3. 捕获到当前请求交给handleRequest方法处理
 ```php
-$app->handleRequest(Request::capture());
+$app->handleRequest(Request::capture())
 ```
 
 ### Kernel内核初始化Application运行环境
@@ -66,10 +66,10 @@ public function store(UserService $service)
 Facade方式
 ```php
 // 使用Cache服务
-Cache::get('name');
+Cache::get('name')
 
 // 使用DB服务
-DB::table('users')->get();
+DB::table('users')->get()
 ```
 
 ## 基础概念
@@ -81,7 +81,7 @@ class CardService
 {
     public function getCard(int $cardId): string
     {
-        return "这是卡片 {$cardId}";
+        return "这是卡片 {$cardId}"
     }
 }
 ```
@@ -97,7 +97,7 @@ class AppServiceProvider extends ServiceProvider
         // 告诉容器：我要注册 CardService
         $this->app->singleton(CardService::class, function () {
             // 告诉容器：需要 CardService 时怎么创建它
-            return new CardService();
+            return new CardService()
         });
     }
 }
@@ -114,7 +114,7 @@ class ReciteController extends Controller
 
     public function show()
     {
-        return $this->cardService->getCard(1);
+        return $this->cardService->getCard(1)
     }
 }
 ```
