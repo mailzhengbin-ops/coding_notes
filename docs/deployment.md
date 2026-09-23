@@ -14,7 +14,7 @@ npm install
 # 打包前端资源
 npm run build
 ```
-注意：服务器需要有composer和node.js、npm
+注意：服务器需要有composer和node.js（含npm）
 ## 创建APP_KEY
 执行如下命令，自动在.env文件中生成APP_KEY配置
 ```bash
