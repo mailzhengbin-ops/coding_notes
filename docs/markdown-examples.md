@@ -36,7 +36,7 @@ $app->handleRequest(Request::capture());
 ### Kernel内核初始化Application
 传入 handleRequest() 方法的请求会交由 Kernel（内核）[（Kernel类的一个实例）](https://github.com/laravel/framework/blob/13.x/src/Illuminate/Foundation/Http/Kernel.php?utm_source=chatgpt.com)处理。Kernel 可以理解为 HTTP 请求进入 Laravel 应用后的重要处理中心。
 
-Kernel 会通过 bootstrappers 数组指定的一系列引导程序（Bootstrapper），对 Application 进行初始化。这些引导程序主要负责：
+Kernel 会通过 bootstrappers 数组指定的一系列引导程序（Bootstrapper），初始化Application的运行环境。这些引导程序主要负责如下运行环境：
 + 加载环境变量；
 + 加载配置；
 + 设置异常处理机制；
