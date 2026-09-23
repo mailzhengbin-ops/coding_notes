@@ -42,7 +42,7 @@ APP_KEY=base64:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 + Tokenizer PHP Extension
 + XML PHP Extension
 
-此外，创建软链必须取消禁用函数
+此外，如项目需要创建软连，必须取消禁用函数
 + symlink()
 
 ## 数据库选择与迁移
