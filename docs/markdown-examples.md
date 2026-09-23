@@ -4,9 +4,9 @@
 Nginx/Apache
     ↓定向到
 Index.php
-    ↓
+    ↓handleRequest()发送到
 HTTP / Console Kernels
-    ↓
+    ↓加载
 Service Providers
     ↓
 Routing
