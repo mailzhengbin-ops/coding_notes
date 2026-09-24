@@ -46,7 +46,7 @@ export default defineConfig({
       {
         text: '运维',
         items: [
-          { text: 'Nginx', link: 'operations' },
+          { text: 'Nginx', link: '/operations' },
           { text: 'Linux', link: 'abc' },
         ]
       },
