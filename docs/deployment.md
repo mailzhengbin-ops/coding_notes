@@ -87,7 +87,7 @@ APP_ENV=production
 APP_DEBUG=false
 ```
 ## 配置nginx
-官方推荐的nginx站点配置，生产环境需要替换为自己的站点信息
+PHP-FPM作为应用服务器
 ```nginx
 server {
     listen 80;
@@ -126,4 +126,58 @@ server {
     }
 }
 ```
-包含了根目录、伪静态等配置
+FrankenPHP作为应用服务器
+```nginx
+map $http_upgrade $connection_upgrade {
+    default upgrade;
+    ''      close;
+}
+ 
+server {
+    listen 80;
+    listen [::]:80;
+    server_name domain.com;
+    server_tokens off;
+    root /home/forge/domain.com/public;
+ 
+    index index.php;
+ 
+    charset utf-8;
+ 
+    location /index.php {
+        try_files /not_exists @octane;
+    }
+ 
+    location / {
+        try_files $uri $uri/ @octane;
+    }
+ 
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location = /robots.txt  { access_log off; log_not_found off; }
+ 
+    access_log off;
+    error_log  /var/log/nginx/domain.com-error.log error;
+ 
+    error_page 404 /index.php;
+ 
+    location @octane {
+        set $suffix "";
+ 
+        if ($uri = /index.php) {
+            set $suffix ?$query_string;
+        }
+ 
+        proxy_http_version 1.1;
+        proxy_set_header Host $http_host;
+        proxy_set_header Scheme $scheme;
+        proxy_set_header SERVER_PORT $server_port;
+        proxy_set_header REMOTE_ADDR $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection $connection_upgrade;
+ 
+        proxy_pass http://127.0.0.1:8000$suffix;
+    }
+}
+```
+
