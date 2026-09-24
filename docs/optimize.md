@@ -6,7 +6,7 @@
 composer require laravel/octane
 ```
 
-执行命令如下命令安装[FrankenPHP](https://frankenphp.dev/zh/)作为运行服务器并加载其配置到项目中
+选择安装[FrankenPHP](https://frankenphp.dev/zh/)作为运行服务器并加载其配置到项目中
 ```bash
 php artisan octane:install
 ```
