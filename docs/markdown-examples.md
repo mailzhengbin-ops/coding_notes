@@ -18,8 +18,8 @@ Finishing Up
 ```php
 require __DIR__.'/../vendor/autoload.php'
 ```
-`autoload.php` 是composer的自动加载器，当调用处需要某个类时实现自动加载
->小补充：注册自动加载器后，可以把类加载到任何地方需要使用的地方，只不过只不过new类时需要用完整命名空间，比如new App\Models\User()，此时可以用use App\Models\User来取别名使用，此时直接new User()即可使用，需要注意的是use并不会加载文件，真正的文件加载是依靠autoload.php
+`autoload.php` 是composer提供的的自动加载器，可以把类加载到任何地方需要使用的地方
+>小补充：自动加载器只负责把类加载至调用处，但不承担use关键字的功能，如需简化命名空间类的写法，需要使用请使用use关键字
 
 2. 通过引导文件创建Laravel应用（Application，即服务容器）的实例
 ```php
