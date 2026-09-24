@@ -47,7 +47,7 @@ APP_KEY=base64:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ## 数据库选择与迁移
 
-由于Laravel默认采用sqlite，如更换数据库需要到.env文件中切换数据库，更改连接配置
+由于Starter Kits默认采用sqlite，如更换数据库需要到.env文件中切换数据库，更改连接配置
 ```bash
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
