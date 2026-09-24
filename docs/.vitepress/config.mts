@@ -44,9 +44,10 @@ export default defineConfig({
         ]
       },
       {
-        text: 'Next.js',
+        text: '运维',
         items: [
-          { text: '项目启动', link: '/api-examples' },
+          { text: 'Nginx', link: 'operations' },
+          { text: 'Linux', link: 'abc' },
         ]
       },
       {
