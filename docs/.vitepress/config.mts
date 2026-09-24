@@ -40,12 +40,13 @@ export default defineConfig({
           { text: '接口开发', link: '/api' },
           { text: '前端', link: '/frontend' },
           { text: '数据库', link: '/database' },
+          { text: '性能优化', link: '/database' },
         ]
       },
       {
-        text: '性能优化',
+        text: 'Next.js',
         items: [
-          { text: '性能优化', link: '/api-examples' },
+          { text: '项目启动', link: '/api-examples' },
         ]
       },
       {
