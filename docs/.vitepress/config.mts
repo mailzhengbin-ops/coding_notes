@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: "AI coding开发手册",
+  title: "Dev manual",
   description: "A VitePress Site",
   themeConfig: {
     sidebarMenuLabel: '菜单',
