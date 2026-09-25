@@ -4,6 +4,7 @@ export default defineConfig({
   title: "AI coding开发手册",
   description: "A VitePress Site",
   themeConfig: {
+    logo: '/logo.png',
     sidebarMenuLabel: '菜单',
     outline: {
       label: '本页目录'
