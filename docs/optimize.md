@@ -48,8 +48,12 @@ public function index(): array
 ```
 ## 文件存储
 合理安排文件的存储位置，数量众多、体积较大的文件优先考虑存储在远程，避免本机磁盘占用过大
-| Disk | 存储位置 | 访问方式 | 典型用途 |
-| :--- | :--- | :--- | :--- |
-| `local` | 服务器本地 `storage/app/private/` | 默认不能直接通过浏览器访问 | 私密文件 |
-| `public` | 服务器本地 `storage/app/public/` | 通过 `public/storage` 访问 | 图片、头像、公开文件 |
-| `oss` | 阿里云 OSS | 通过网络访问 | 图片、视频多或者大的文件 |
+```
+// 向storage/app/public/test.txt写入Hello Laravel
+Storage::disk('public')->put('test.txt', 'Hello Laravel');
+```
+| Disk | 存储位置 | 访问方式 |
+| :--- | :--- | :--- |
+| `local` | 服务器本地 `storage/app/private/` | 默认不能直接通过浏览器访问 |
+| `public` | 服务器本地 `storage/app/public/` | 通过 `public/storage` 访问 |
+| `oss` | 阿里云 OSS | 通过网络访问 |
