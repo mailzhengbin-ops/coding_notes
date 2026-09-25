@@ -46,8 +46,8 @@ public function index(): array
 }
 ```
 ## 文件存储
-
-Disk| 存储位置| 访问方式| 典型用途
-"local"| 服务器本地 "storage/app/private/"| 默认不能直接通过浏览器访问| 私密文件
-"public"| 服务器本地 "storage/app/public/"| 通过 "public/storage" 访问| 图片、头像、公开文件
-"oss"| 阿里云 OSS| 通过网络访问| 图片、视频、PDF、大量文件
+| Disk | 存储位置 | 访问方式 | 典型用途 |
+| :--- | :--- | :--- | :--- |
+| `local` | 服务器本地 `storage/app/private/` | 默认不能直接通过浏览器访问 | 私密文件 |
+| `public` | 服务器本地 `storage/app/public/` | 通过 `public/storage` 访问 | 图片、头像、公开文件 |
+| `oss` | 阿里云 OSS | 通过网络访问 | 图片、视频、PDF、大量文件 |
