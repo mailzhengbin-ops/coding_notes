@@ -1,5 +1,7 @@
 # 性能优化
-## 替换PHP-FPM，改用FrankenPHP
+## 改用FrankenPHP
+PHP-FPM不常驻内存，导致性能偏弱，因此在必要时可更换更高性能的应用服务器
+
 ### 安装Octane
 ```bash
 composer require laravel/octane
