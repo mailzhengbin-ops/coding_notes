@@ -26,7 +26,7 @@ php artisan key:generate
 APP_KEY=base64:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 ## 扩展和函数
-官方要求必须开启的扩展
+必装项（官方要求，Laravel运行不可或缺）
 + PHP >= 8.3
 + Ctype PHP Extension
 + cURL PHP Extension
@@ -42,8 +42,9 @@ APP_KEY=base64:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 + Tokenizer PHP Extension
 + XML PHP Extension
 
-此外，如项目需要创建软连，必须取消禁用函数
-+ symlink()
+可选项（基于网站需要）：
++ 取消函数禁用symlink()：项目需要创建软连
++ PhpRedis扩展：项目的缓存驱动器为redis
 
 ## 数据库选择与迁移
 
