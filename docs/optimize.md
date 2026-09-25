@@ -18,8 +18,9 @@ php artisan octane:start
 
 ### 通过Nginx反向代理到FrankenPHP：参见项目部署
 
-## redis缓存
-Laravel支持多种缓存驱动器，比如redis、文件系统磁盘、数据库cache表（默认采用）
+## Redis缓存
+Redis是介于应用和数据库之间的中间件，避免了从数据库直接读写数据时效率低下的问题
+> Laravel支持多种缓存驱动器，比如redis、文件系统磁盘、数据库cache表（默认采用）
 
 ### 选择缓存驱动器
 ```php
