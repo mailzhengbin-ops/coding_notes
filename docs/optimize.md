@@ -25,8 +25,15 @@ CACHE_STORE=database
 ```
 > 如使用redis来缓存，必须安装PhpRedis扩展
 
-使用缓存的键值对
+需要注意的是，需要缓存什么内容（常读取但不常变化），何时取出缓存内容是开发者自己决定的
+
 ```php
-取出缓存中键为key的数据
-$value = Cache::get('key');
+// 从数据库查询所有热门文章
+$articles = Article::where('hot', true)->get();
+
+// 将查询结果存入缓存
+Cache::put('hot_articles', $articles, 3600);
+
+// 根据key从缓存中取出热门文章
+$articles = Cache::get('hot_articles');
 ```
