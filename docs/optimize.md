@@ -48,7 +48,7 @@ public function index(): array
 ```
 ## 文件存储
 合理安排文件的存储位置，数量众多、体积较大的文件优先考虑存储在远程，避免本机磁盘占用过大
-```
+```php
 // 向storage/app/public/test.txt写入Hello Laravel
 Storage::disk('public')->put('test.txt', 'Hello Laravel');
 ```
