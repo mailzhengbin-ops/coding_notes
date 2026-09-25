@@ -3,10 +3,10 @@
 ### 主进程 + 工作进程（worker）池
 master+多worker处理请求，一个worker在同一时间只能处理一个请求，每个worker之间相互隔离，fpm的并发能力取决于worker数量
 
-worker把全部请求执行完毕后，worker不会销毁，而是继续等待下一个请求处理
+worker进程级内存常驻（不同于Laravel Octane的应用级内存常驻）：worker把全部请求执行完毕后，worker不会销毁，而是继续等待下一个请求处理
 
 ### 内存泄漏管理
-每一次请求结束，清理worker会清理请求级资源
+每一次请求结束，清理worker会清理请求级资源自动执行php_request_shutdown()  
 
 除非达到当pm.max_requests = 500设置的每个worker最多处理请求数达到时，worker销毁（同时worker占用的内存全部彻底销毁，避免内存泄漏）
 
