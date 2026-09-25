@@ -1,5 +1,4 @@
 # 性能优化
-## 性能
 ### 替换PHP-FPM，改用FrankenPHP
 安装Octane
 ```bash
