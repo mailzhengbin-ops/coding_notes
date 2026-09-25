@@ -30,13 +30,17 @@ CACHE_STORE=database
 ### 缓存使用（存入/取出）
 需要缓存什么内容（常读取但不常变化），何时使用缓存内容是开发者自己决定的
 
+> 案例：利用缓存实现热门文章查询
 ```php
-// 从数据库查询所有热门文章
-$articles = Article::where('hot', true)->get();
-
-// 将查询结果存入缓存
-Cache::put('hot_articles', $articles, 3600);
-
-// 根据key从缓存中取出热门文章
-$articles = Cache::get('hot_articles');
+public function index(): array
+{
+    // 如果缓存存在，直接读取；如果不存在，执行数据库查询并讲查询到的数据写入缓存
+    $articles = Cache::remember(
+        'hot_articles',
+        3600,
+        fn () => Article::where('hot', true)->get()
+    );
+    // 以数组形式返回热门文章
+    return $articles->toArray();
+}
 ```
