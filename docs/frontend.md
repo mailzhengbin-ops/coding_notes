@@ -1,4 +1,4 @@
-# PHP设计哲学
+# PHP特性
 ## PHP-FPM
 ### 主进程 + 工作进程（worker）池
 master+多worker处理请求，一个worker在同一时间只能处理一个请求，每个worker之间相互隔离，fpm的并发能力取决于worker数量
