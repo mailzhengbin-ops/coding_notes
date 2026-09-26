@@ -12,6 +12,7 @@ laravel --version
 php -v
 composer -v
 ```
+> 如果需要更新，重新运行安装命令即可
 
 + Web服务器：默认采用php内置的开发服务器，通过`php artisan serve`启动
 + 数据库：默认采用Laravel内置的sqlite，并且执行了必要的迁移来创建数据库表
