@@ -38,7 +38,7 @@ export default defineConfig({
           { text: '设计思想', link: '/markdown-examples' },
           { text: '部署上线', link: '/deployment' },
           { text: '接口开发', link: '/api' },
-          { text: '前端', link: '/frontend' },
+          { text: 'PHP特性', link: '/frontend' },
           { text: '数据库', link: '/database' },
           { text: '性能优化', link: '/optimize' },
         ]
