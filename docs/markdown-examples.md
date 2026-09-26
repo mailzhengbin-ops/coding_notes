@@ -121,7 +121,8 @@ app/
 └── Exceptions/          ← 异常相关
 ```
 
-## Providers
+## 文件设计
+### Providers
 ```php
 class AppServiceProvider extends ServiceProvider
 {
@@ -138,7 +139,7 @@ class AppServiceProvider extends ServiceProvider
 ```
 注意：自己在Services中创建的具体Service通常不需要再register中注册，因为Service Container会自动解析具体的类
 
-## Actions和Services
+### Actions和Services
 Actions（操作类）通常是一个类里只有一个方法，用于处理一个具体的业务，Services（服务类）里通常是一个类里一组方法，用于处理同类的业务
 
 ## Thin Controller
