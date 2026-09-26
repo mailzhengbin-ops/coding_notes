@@ -21,7 +21,7 @@ require __DIR__.'/../vendor/autoload.php'
 `autoload.php` 是composer提供的自动加载器，可以把类加载到任何地方需要使用的地方
 >小补充：自动加载器只负责把类加载至调用处，但不承担use关键字的功能，如需简化命名空间类的写法，需要使用请使用use关键字
 
-2. 通过引导文件创建Laravel应用（Application，即服务容器）的实例
+2. 通过引导文件创建Laravel应用（Application），即服务容器的实例
 ```php
 /** @var Application $app */
 $app = require_once __DIR__.'/../bootstrap/app.php'
