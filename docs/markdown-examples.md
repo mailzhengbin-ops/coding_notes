@@ -14,21 +14,21 @@ Routing
 Finishing Up
 ```
 ### public/index.php
-1. 注册composer自动加载器
+#### 注册composer自动加载器
 ```php
 require __DIR__.'/../vendor/autoload.php'
 ```
 `autoload.php` 是composer提供的自动加载器，可以把类加载到任何地方需要使用的地方
 >小补充：自动加载器只负责把类加载至调用处，但不承担use关键字的功能，如需简化命名空间类的写法，需要使用请使用use关键字
 
-2. 通过引导文件创建Laravel应用（Application），即服务容器的实例
+#### 通过引导文件创建Laravel应用/服务容器（Application/Service Container）的实例
 ```php
 /** @var Application $app */
 $app = require_once __DIR__.'/../bootstrap/app.php'
 ```
 `bootstrap/app.php`是Laravel应用启动引导文件，它负责创建Application，通常把结果返回给$app对象，此对象即服务容器
 
-3. 捕获到当前请求交给handleRequest方法处理
+#### 捕获到当前请求交给handleRequest方法处理
 ```php
 $app->handleRequest(Request::capture())
 ```
