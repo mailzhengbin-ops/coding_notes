@@ -88,7 +88,7 @@ APP_ENV=production
 APP_DEBUG=false
 ```
 ## 配置nginx
-PHP-FPM作为应用服务器
+通过FastCGI，分发请求给PHP-FPM处理
 ```nginx
 server {
     listen 80;
@@ -127,7 +127,7 @@ server {
     }
 }
 ```
-FrankenPHP作为应用服务器
+通过反向代理，分发请求给FrankenPHP处理
 ```nginx
 map $http_upgrade $connection_upgrade {
     default upgrade;
