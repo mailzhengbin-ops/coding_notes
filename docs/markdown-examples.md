@@ -53,26 +53,7 @@ Service Providers负责引导和配置框架的各种核心组件，包括：数
 ### 路由
 当kernel完成应用初始化后，应用的运行环境准备完毕，万事俱备！接下来请求会通过路由分发到各个控制器来处理
 
-## 服务使用方式：依赖注入或Facade
-依赖注入和 Facade 都是 Laravel 使用服务的一种方式
-依赖注入方式
-```php
-// 使用UserService服务
-public function store(UserService $service)
-{
-    $service->register();
-}
-```
-Facade方式
-```php
-// 使用Cache服务
-Cache::get('name')
-
-// 使用DB服务
-DB::table('users')->get()
-```
-
-## 基础概念
+## 服务容器
 ### 服务（类）
 真正干活的类
 > 例：CardService服务类，用户给一个 card_id，该服务类负责查询卡片并返回卡片信息
