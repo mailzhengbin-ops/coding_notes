@@ -13,7 +13,7 @@ Routing
     ↓
 Finishing Up
 ```
-### index.php
+### public/index.php
 1. 注册composer自动加载器
 ```php
 require __DIR__.'/../vendor/autoload.php'
