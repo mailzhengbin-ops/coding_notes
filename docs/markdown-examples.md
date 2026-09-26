@@ -34,16 +34,16 @@ $app->handleRequest(Request::capture())
 ```
 
 ### Kernel内核初始化Application运行环境
-传入 handleRequest() 方法的请求会交由 Kernel内核[（Kernel类的一个实例）](https://github.com/laravel/framework/blob/13.x/src/Illuminate/Foundation/Http/Kernel.php?utm_source=chatgpt.com)处理。Kernel 可以理解为 HTTP 请求进入 Laravel 应用后的重要处理中心。
+传入 handleRequest() 方法的请求会交由 Kernel内核[（Kernel类的一个实例）](https://github.com/laravel/framework/blob/13.x/src/Illuminate/Foundation/Http/Kernel.php?utm_source=chatgpt.com)处理。Kernel 可以理解为 HTTP 请求进入 Laravel 应用后的重要处理中心
 
-Kernel 会通过 bootstrappers 数组指定的一系列引导程序（Bootstrapper），初始化Application的运行环境。这些引导程序主要负责如下运行环境：
+Kernel 会通过`bootstrappers`数组指定的一系列引导程序初始化应用的运行环境。这些运行环境包括：
 + 加载环境变量；
 + 加载配置；
 + 设置异常处理机制；
 + 注册 Facade；
 + 注册并启动 Service Provider；
 
-完成这些引导工作后，Application的运行环境初始化完成，随后请求会继续进入 Laravel 的中间件、路由、控制器等处理流程。
+完成这些引导工作后，应用的运行环境初始化完成，随后请求会继续进入中间件、路由、控制器等处理流程
 
 ### Service Providers
 同上述，注册并启动Service Providers是Kernel内核最重要的引导操作之一
