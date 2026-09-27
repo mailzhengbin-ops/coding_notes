@@ -31,7 +31,7 @@ export default defineConfig({
         ]
       },
       {
-        text: 'Laravel',
+        text: '技术栈',
         collapsed: false,
         items: [
       {
