@@ -57,7 +57,7 @@ Service Providers负责引导和配置框架的各种核心组件，包括：数
 IoC是面向对象编程中的一种设计思想：把对象的创建、依赖关系的管理、生命周期控制，全部交给一个外部容器（在Laravel中为Service Container）来负责，使用处只需要声明"我需要什么"，容器会自动把依赖"注入"进来（DI，即依赖注入）
 > 与自动加载区别：自动加载解决“类文件怎么加载”，IoC 解决“对象及其依赖怎么创建、管理和注入”
 
-如下为使用Ioc执行依赖注入的流程演示：
+如下为使用IoC执行依赖注入的流程演示：
 ```text
 UserController
       │
@@ -71,6 +71,26 @@ Service Container
       ↓
 注入 UserController
 ```
+### 声明依赖
+即告诉服务容器，我需要谁，在Laravel中依赖声明主要有以下两种位置
+```php
+class UserController
+{
+    // ① 构造函数声明依赖
+    public function __construct(UserService $service)
+    {
+        $this->service = $service;
+    }
+
+    // ② 普通方法声明依赖
+    public function show(UserRepository $repository)
+    {
+        return $repository->find(1);
+    }
+}
+```
+构造函数注入 → 类级别依赖
+方法注入     → 方法级别依赖
 ### 服务（类）
 真正干活的类
 > 例：CardService服务类，用户给一个 card_id，该服务类负责查询卡片并返回卡片信息
