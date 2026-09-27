@@ -61,7 +61,7 @@ IoC是面向对象编程中的一种设计思想：把对象的创建、依赖�
 ```text
 UserController
       │
-      │ 需要 UserService
+      │ 需要（声明依赖） UserService
       ↓
 Service Container
       │
@@ -79,15 +79,14 @@ class UserController{
     public function __construct(UserService $service){
         $this->service = $service;
     }
-
     // ② 普通方法声明依赖
     public function show(UserRepository $repository){
         return $repository->find(1);
     }
 }
 ```
-构造函数注入 → 类级别依赖
-方法注入     → 方法级别依赖
+## 依赖解析
+容器根据一个调用处的依赖声明，找到它需要的对象（如果该对象还依赖其他对象，就继续递归解析这些依赖，直到所有依赖都准备好）为后续注入做准备
 ### 服务（类）
 真正干活的类
 > 例：CardService服务类，用户给一个 card_id，该服务类负责查询卡片并返回卡片信息
