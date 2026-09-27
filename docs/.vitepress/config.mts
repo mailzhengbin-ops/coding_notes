@@ -49,7 +49,7 @@ export default defineConfig({
       },
       {
         text: 'Nest.js',
-        collapsed: false,
+        collapsed: true,
         items: [
           { text: '项目启动', link: '/laravel' },
           { text: '设计思想', link: '/markdown-examples' },
