@@ -74,17 +74,14 @@ Service Container
 ### 声明依赖
 即告诉服务容器，我需要谁，在Laravel中依赖声明主要有以下两种位置
 ```php
-class UserController
-{
+class UserController{
     // ① 构造函数声明依赖
-    public function __construct(UserService $service)
-    {
+    public function __construct(UserService $service){
         $this->service = $service;
     }
 
     // ② 普通方法声明依赖
-    public function show(UserRepository $repository)
-    {
+    public function show(UserRepository $repository){
         return $repository->find(1);
     }
 }
