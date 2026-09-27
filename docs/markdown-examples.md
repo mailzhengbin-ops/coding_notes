@@ -69,7 +69,7 @@ Service Container
       ├── 解析 UserService 的依赖
       ├── 创建 UserService 对象
       ↓
-注入 UserController
+注入到 UserController
 ```
 ### 声明依赖
 即告诉服务容器，我需要谁，在Laravel中依赖声明主要有以下两种位置
@@ -85,7 +85,7 @@ class UserController{
     }
 }
 ```
-## 依赖解析
+### 依赖解析
 容器根据一个调用处的依赖声明，找到它需要的对象（如果该对象还依赖其他对象，就继续递归解析这些依赖，直到所有依赖都准备好）为后续注入做准备
 ### 服务（类）
 真正干活的类
