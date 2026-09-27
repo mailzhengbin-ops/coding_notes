@@ -87,6 +87,34 @@ class UserController{
 ```
 ### 依赖解析
 容器根据一个调用处的依赖声明，找到它需要的对象（如果该对象还依赖其他对象，就继续递归解析这些依赖，直到所有依赖都准备好）为后续注入做准备
+## 职责优先的类文件划分
+Laravel遵循面向对象的设计理念，通常一个文件就是一个类，这些类文件是按照一定的职责进行划分的，这使得各种类文件职责清晰、降低耦合、便于维护
+| 类文件 | 主要职责 |
+|---|---|
+| Controller | 处理 HTTP 请求、协调业务、返回响应 |
+| Request | 请求数据验证 |
+| Model | 数据模型、数据库相关操作 |
+| Service | 复杂业务逻辑 |
+| Repository | 数据访问、持久化操作 |
+| Middleware | 请求/响应的中间处理 |
+| Job | 异步/队列任务 |
+| Event | 表示某个事件已经发生 |
+| Listener | 处理事件 |
+| Policy | 权限/授权判断 |
+| Notification | 通知逻辑 |
+| Resource | API 响应数据转换 |
+| Rule | 自定义验证规则 |
+| Exception | 异常处理 |
+
+### 核心思想
+
+> 按职责划分类，让每个类负责一类明确的事情，降低代码耦合，提高可维护性。
+
+### 注意
+
+并不是每个 Laravel 项目都需要这些类。
+
+根据实际业务复杂度决定是否创建 `Service`、`Repository` 等类，避免为了分层而分层。
 ### 服务（类）
 真正干活的类
 > 例：CardService服务类，用户给一个 card_id，该服务类负责查询卡片并返回卡片信息
@@ -154,7 +182,7 @@ app/
 └── Exceptions/          ← 异常相关
 ```
 
-## 文件设计
+
 ### Providers
 ```php
 class AppServiceProvider extends ServiceProvider
@@ -175,7 +203,7 @@ class AppServiceProvider extends ServiceProvider
 ### Actions和Services
 Actions（操作类）通常是一个类里只有一个方法，用于处理一个具体的业务，Services（服务类）里通常是一个类里一组方法，用于处理同类的业务
 
-## Thin Controller
+### Thin Controller
 thin controller是一种控制器设计方式：controller内不应该处理一大堆业务逻辑，而是把具体业务交给service完成，自己则负责完成如下逻辑
 
 ```md
