@@ -32,7 +32,6 @@ export default defineConfig({
       },
       {
         text: '技术栈',
-        collapsed: false,
         items: [
       {
         text: 'Laravel',
@@ -48,7 +47,7 @@ export default defineConfig({
       },
       {
         text: 'Nest.js',
-        collapsed: false,
+        collapsed: true,
         items: [
           { text: '项目启动', link: '/a' },
           { text: '设计思想', link: '/b' },
