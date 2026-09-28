@@ -67,9 +67,7 @@ export default defineConfig({
         text: 'Agent',
         collapsed: false,
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' },
-          { text: 'Laravel项目启动', link: '/laravel' },
+          { text: '规范驱动开发', link: '/spec' },
         ]
       }
     ],
