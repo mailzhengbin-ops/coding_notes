@@ -31,6 +31,7 @@ Laravel 提供基于Session-Cookie的身份验证
 恢复用户身份
 ```
 > 验证凭证决定“能不能登录”，Session + Cookie负责“记住已经登录”，避免HTTP无状态
-## 限流
-## 授权
-## CSRF
+
+Session会话存储驱动可以存储某用户session会话的会话数据,这些数据通常包括
+用户身份（user_id = 1001）、登录状态（authenticated = true）等
+
