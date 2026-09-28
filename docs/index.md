@@ -12,8 +12,8 @@ hero:
       link: /laravel
 
 features:
-  - title: Agent (Claude Code)
-    details: Work with Claude directly in your codebase. Build, debug, and ship from your terminal, IDE, Slack, web, and more
   - title: Laravel
-    details: Laravel is batteries-included so everyone can build and ship web apps at ridiculous speed
+    details: The clean stack for Artisans and agents. Laravel is batteries-included so everyone can build and ship web apps at ridiculous speed.
+  - title: Nest.js
+    details: MorethanjustaNodeframework，Nest - the world's fastest-growing Node framework for building efficient, reliable and scalable server-side applications.
 ---
