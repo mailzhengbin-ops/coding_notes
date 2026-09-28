@@ -16,16 +16,12 @@
 （Session会话存储在指定的驱动器中，默认为database的sessions表）
   ↓
 在客户端：在Cookie中保存服务端分配的Session ID
-
 ---------------------------------------
-
 后续请求
   ↓
-携带 Cookie
+每次请求的Cookie中携带Session ID
   ↓
-获取 Session ID
-  ↓
-找到对应 Session
+将Session ID与服务器中存储的身份信息进行匹配，比对成功
   ↓
 恢复用户身份
 ```
