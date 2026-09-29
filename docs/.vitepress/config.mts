@@ -51,7 +51,7 @@ export default defineConfig({
         collapsed: true,
         items: [
           { text: '项目启动', link: '/a' },
-          { text: '设计思想', link: '/b' },
+          { text: '设计思想', link: '/nest_module' },
         ]
       },
         ]
