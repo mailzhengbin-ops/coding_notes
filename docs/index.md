@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: "全栈开发手册"
+  name: 全栈开发手册
   text: Laravel+Next.js
   tagline: 框架原理、架构设计...
   actions:
