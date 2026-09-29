@@ -1,6 +1,6 @@
 # Laravel项目启动
 
-## 环境安装
+## 开发环境
 **JS环境**：[Node.js](https://nodejs.org/zh-cn)和npm
 
 **PHP环境**：以下指令安装php、composer、laravel installer（[php.new提供](https://php.new/)）
@@ -8,7 +8,6 @@
 ```bash
 # 指令
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://php.new/install/windows/8.5'))
-
 # 检查
 laravel --version
 php -v
