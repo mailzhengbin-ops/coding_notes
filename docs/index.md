@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "全栈开发手册"
-  text: "Laravel+Nest.js"
+  text: 框架原理+架构设计
   tagline: 多样化技术栈笔记
   actions:
     - theme: brand
