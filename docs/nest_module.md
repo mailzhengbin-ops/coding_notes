@@ -16,3 +16,18 @@ user/
     └── user.entity.ts
 ```
 ### user.module.ts
+:::tabs
+
+== tab npm
+
+```bash
+npm install
+```
+
+== tab pnpm
+
+```bash
+pnpm install
+```
+
+:::
