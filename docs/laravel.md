@@ -2,6 +2,7 @@
 
 ## 环境安装
 **JS环境**：[Node.js](https://nodejs.org/zh-cn)和Npm
+
 **PHP环境**：以下指令安装php、composer、laravel installer（[php.new提供](https://php.new/)）
 
 ```bash
