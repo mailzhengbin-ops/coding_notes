@@ -16,6 +16,7 @@ composer -v
 
 + Web服务器：默认采用php内置的开发服务器，通过`php artisan serve`启动
 + 数据库：默认采用Laravel内置的sqlite，并且执行了必要的迁移来创建数据库表
+
 **JS环境**：[Node.js](https://nodejs.org/zh-cn)和Npm
 ## 创建项目
 
