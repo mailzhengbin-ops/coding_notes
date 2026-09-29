@@ -5,7 +5,7 @@ layout: home
 hero:
   name: 全栈开发手册
   text: Laravel+Next.js
-  tagline: 架构设计、框架原理、工程实践、部署运维...
+  tagline: 架构设计·框架原理·工程实践·部署运维...
   actions:
     - theme: brand
       text: 查看文档
