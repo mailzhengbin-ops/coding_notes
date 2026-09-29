@@ -4,8 +4,8 @@ layout: home
 
 hero:
   name: "全栈开发手册"
-  text: 框架原理+架构设计
-  tagline: 多样化技术栈笔记
+  text: Laravel+Next.js
+  tagline: 框架原理、架构设计...
   actions:
     - theme: brand
       text: 查看文档
