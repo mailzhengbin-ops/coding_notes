@@ -1,7 +1,7 @@
 # Laravel项目启动
 
 ## 环境安装
-**JS环境**：[Node.js](https://nodejs.org/zh-cn)和Npm
+**JS环境**：[Node.js](https://nodejs.org/zh-cn)和npm
 
 **PHP环境**：以下指令安装php、composer、laravel installer（[php.new提供](https://php.new/)）
 
