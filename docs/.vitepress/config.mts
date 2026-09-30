@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  lang: 'en-US',
+  lang: 'zh-CN',
   title: "Dev wiki",
   description: "A VitePress Site",
   themeConfig: {
