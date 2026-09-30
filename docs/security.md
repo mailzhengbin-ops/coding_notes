@@ -3,8 +3,7 @@
 本章只涉及Session-Cookie身份验证方案（通用认证方案，与Laravel无关）
 > 基于Token、JWT的认证方案，在本章中不涉及
 
-### 验证流程
-如下为Session-Cookie认证方案的完整流程
+### Session-Cookie方案验证流程
 ```text
 【第一次请求】
   ↓
