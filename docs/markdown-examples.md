@@ -45,7 +45,7 @@ Kernel 会通过`bootstrappers`数组指定的一系列引导程序初始化应�
 
 完成这些引导工作后，应用的运行环境初始化完成，随后请求会继续进入中间件、路由、控制器等处理流程
 
-### Service Providers
+## Service Providers
 同上述，注册并启动Service Providers是Kernel内核最重要的引导操作之一
 
 Service Providers负责引导和配置框架的各种核心组件，包括：数据库、队列、验证、路由...
