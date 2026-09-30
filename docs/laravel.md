@@ -8,7 +8,7 @@ node -v
 npm -v
 ```
 
-**PHP环境**：以下指令安装php、composer、laravel installer（[php.new提供](https://php.new/)）
+**PHP环境**：PHP、Composer、Laravel installer（一键安装命令，[php.new提供](https://php.new/)）
 
 ```bash
 # 指令
