@@ -1,17 +1,3 @@
-# 英语12种时态——主动语态
-
-| 时间 ↓ / 状态 → | 一般（Simple） | 进行（Progressive） | 完成（Perfect） | 完成进行（Perfect Progressive） |
-|---|---|---|---|---|
-| **现在** | S + V | S + am/is/are + V-ing | S + have/has + V₃ | S + have/has been + V-ing |
-| **过去** | S + V-ed | S + was/were + V-ing | S + had + V₃ | S + had been + V-ing |
-| **将来** | S + will + V | S + will be + V-ing | S + will have + V₃ | S + will have been + V-ing |
-
-# 英语12种时态——被动语态
-
-| 时间 ↓ / 状态 → | 一般（Simple） | 进行（Progressive） | 完成（Perfect） | 完成进行（Perfect Progressive） |
-|---|---|---|---|---|
-| **现在** | S + am/is/are + V₃ | S + am/is/are being + V₃ | S + have/has been + V₃ | S + have/has been being + V₃ |
-| **过去** | S + was/were + V₃ | S + was/were being + V₃ | S + had been + V₃ | S + had been being + V₃ |
-| **将来** | S + will be + V₃ | S + will be being + V₃ | S + will have been + V₃ | S + will have been being + V₃ |
-
-> 注：完成进行时的被动结构在实际英语中极少使用。
+## 路由
+路由（Routing）是根据客户端请求的**HTTP方法**和**URL**，将请求匹配并分发给相应**处理器**（控制器方法/闭包函数）的机制
+> HTTP方法的语义化：既然控制器的方法才真正执行查询、写入、删除，为什么还要分 GET、POST、DELETE？因为HTTP方法不是“业务逻辑本身”，而是“请求意图和协议行为”的声明，其能使客户端更好地理解这次请求
