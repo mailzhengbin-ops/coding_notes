@@ -13,7 +13,7 @@ Routing
     ↓
 Finishing Up
 ```
-### public/index.php
+### 步骤一 public/index.php
 #### 注册composer自动加载器
 ```php
 require __DIR__.'/../vendor/autoload.php'
@@ -33,7 +33,7 @@ $app = require_once __DIR__.'/../bootstrap/app.php'
 $app->handleRequest(Request::capture())
 ```
 
-### Kernel内核初始化Application运行环境
+### 步骤二 Kernel内核初始化Application运行环境
 传入 handleRequest() 方法的请求会交由 Kernel内核[（Kernel类的一个实例）](https://github.com/laravel/framework/blob/13.x/src/Illuminate/Foundation/Http/Kernel.php?utm_source=chatgpt.com)处理。Kernel 可以理解为 HTTP 请求进入 Laravel 应用后的重要处理中心
 
 Kernel 会通过`bootstrappers`数组指定的一系列引导程序初始化应用的运行环境。这些运行环境包括：
@@ -50,7 +50,7 @@ Kernel 会通过`bootstrappers`数组指定的一系列引导程序初始化应�
 
 Service Providers负责引导和配置框架的各种核心组件，包括：数据库、队列、验证、路由...
 
-### 路由
+### 步骤三 中间件与路由
 当kernel完成应用初始化后，应用的运行环境准备完毕，万事俱备！接下来请求会通过路由分发到各个控制器来处理
 
 ## IoC
