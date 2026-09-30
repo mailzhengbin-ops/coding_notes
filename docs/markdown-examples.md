@@ -58,7 +58,7 @@ IoC（控制反转）是面向对象编程中的一种设计思想，其要旨�
 > 与自动加载区别：自动加载解决“类文件怎么加载”，IoC 解决“对象及其依赖怎么创建、管理和注入”
 
 ### Laravel的IoC实践
-基于IoC，Laravel设计了服务容器（Service Container）、服务提供者（Service Provider）和服务（Service）等核心概念。下面通过依赖注入的执行流程，理解这三个概念之间的关系
+Laravel设计了服务容器、服务提供者和服务的概念来实践IoC思想，下面通过依赖注入的执行流程，理解这三个概念之间的关系
 ```text
 UserController（消费者）
       │
