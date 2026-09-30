@@ -6,6 +6,9 @@ export default defineConfig({
   description: "A VitePress Site",
   themeConfig: {
     externalLinkIcon: true,
+    darkModeSwitchLabel: '外观',
+    lightModeSwitchTitle: '切换到浅色模式',
+    darkModeSwitchTitle: '切换到深色模式',
     returnToTopLabel: '返回顶部',
     sidebarMenuLabel: '菜单',
     outline: {
