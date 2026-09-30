@@ -5,6 +5,7 @@ export default defineConfig({
   title: "Dev wiki",
   description: "A VitePress Site",
   themeConfig: {
+    returnToTopLabel: '返回顶部',
     sidebarMenuLabel: '菜单',
     outline: {
       label: '本页目录'
