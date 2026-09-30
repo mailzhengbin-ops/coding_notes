@@ -1,12 +1,13 @@
 # PHP特性
 ## PHP-FPM
-### Master–Worker（多进程、单线程）
-PHP-FPM采用master（主进程）+多worker（工作进程）处理请求，一个worker在同一时间只能处理一个请求，每个worker之间相互隔离，fpm的并发能力取决于worker数量
+### Master–Worker执行模型
+（多进程、单线程）
+PHP-FPM采用一个多进程、单线程的执行模型，其中master为主进程，其可以管理多个相互隔离的worker子进程（即工作进程）来处理请求
+> 多进程指可以同时可以运行多个worker，单线程指的是一个worker进程内部只有一个执行线程
 
-worker进程级内存常驻（不同于Laravel Octane的应用级内存常驻）：worker把全部请求执行完毕后，worker不会销毁，而是继续等待下一个请求处理
+worker进程保持内存常驻状态（进程级常驻），不同于Laravel Octane提供的的应用级内存常驻
+> 进程常驻指worker把全部请求执行完毕后不会销毁，而是继续等待下一个请求处理
 
-多进程指的的是同时可以运行多个 Worker。
-单进程指的是一个Worker进程内部，通常只有一个执行线程
 ### 内存泄漏管理
 + 每一次请求结束，清理worker自动执行`php_request_shutdown()`清理请求级资源
 
