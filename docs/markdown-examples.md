@@ -6,10 +6,10 @@ Nginx/Apache
 Index.php
     ↓handleRequest()发送到
 HTTP / Console Kernels
-    ↓加载
-Service Providers
+    ↓初始化
+运行环境（Service Providers...）
     ↓
-Routing
+Middleware → Routing → Controller → Service
     ↓
 Finishing Up
 ```
