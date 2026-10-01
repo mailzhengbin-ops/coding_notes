@@ -1,7 +1,31 @@
 # 安全性
 ## 身份认证
-Laravel的身份验证机制核心由`guard`和`provider`组成。其中，`guard`定义了每次请求的用户身份验证方案
-> 例如，Laravel自带一个session守卫，他支持用Session-Cookie方案来实现身份验证
+Laravel的身份验证机制核心由`guard`和`provider`组成。其中，`guard`提供了身份验证方案
+### Laravel中身份认证方案的配置
+```php
+'guards' => [
+     // web是该guard的名字，driver决定该守卫用什么样的身份验证机制，provider决定使用什么用户来源
+    'web' => [
+        'driver' => 'session',
+        'provider' => 'users',
+    ],
+    'api' => [
+        'driver' => 'token',
+        'provider' => 'users',
+    ],
+    'admin' => [
+        'driver' => 'session',
+        'provider' => 'admins',
+    ],
+],
+```
+> 注意：guard名称不能决定该守卫采取那种认证方案，真正取决定作用的是`'driver' => 'session'`配置项
+```php
+Auth::guard('admin')->user();
+
+```
+> guard默认提供的web guard支持Session-Cookie方案来实现身份验证，如果
+
 
 本章只涉及Session-Cookie身份验证方案（通用认证方案，与Laravel无关）
 > 基于Token、JWT的认证方案，在本章中不涉及
