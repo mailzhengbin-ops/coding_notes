@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   lang: 'zh-CN',
-  title: "Dev wiki",
+  title: "zhengbin wiki",
   description: "A VitePress Site",
   themeConfig: {
     externalLinkIcon: true,
