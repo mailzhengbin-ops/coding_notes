@@ -7,10 +7,8 @@ php artisan about
 ```bash
 # 安装composer包
 composer install --no-dev --optimize-autoloader
-
 # 安装npm包
 npm install
-
 # 打包前端资源
 npm run build
 ```
