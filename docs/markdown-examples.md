@@ -34,7 +34,7 @@ $app->handleRequest(Request::capture())
 ```
 
 ### 步骤二 Kernel内核初始化Application运行环境
-传入 handleRequest() 方法的请求会交由 Kernel内核[（Kernel类的一个实例）](https://github.com/laravel/framework/blob/13.x/src/Illuminate/Foundation/Http/Kernel.php?utm_source=chatgpt.com)处理。Kernel 可以理解为 HTTP 请求进入 Laravel 应用后的重要处理中心
+捕获到的请求会通过`handleRequest()`交由 Kernel内核[（Kernel类的一个实例）](https://github.com/laravel/framework/blob/13.x/src/Illuminate/Foundation/Http/Kernel.php?utm_source=chatgpt.com)处理。Kernel 可以理解为 HTTP 请求进入 Laravel 应用后的重要处理中心
 
 Kernel 会通过`bootstrappers`数组指定的一系列引导程序初始化应用的运行环境。这些运行环境包括：
 + 加载环境变量；
