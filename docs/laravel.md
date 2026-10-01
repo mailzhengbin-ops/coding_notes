@@ -6,6 +6,9 @@
 # 检查
 node -v
 npm -v
+
+# 如果npm版本号无法输出，可能是npm.ps1被拦截了，执行如下放开
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
 ```
 
 **PHP环境**：PHP、Composer、Laravel installer（一键安装命令，[php.new提供](https://php.new/)）
