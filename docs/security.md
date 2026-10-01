@@ -2,9 +2,9 @@
 ## 身份认证
 Laravel的身份验证机制核心由`guard`和`provider`组成。其中，`guard`提供了身份验证方案
 ### Laravel中身份认证方案的配置
+web是该guard的名称，driver决定该守卫用什么样的身份验证机制，provider决定使用什么用户来源
 ```php
 'guards' => [
-     // web是该guard的名字，driver决定该守卫用什么样的身份验证机制，provider决定使用什么用户来源
     'web' => [
         'driver' => 'session',
         'provider' => 'users',
@@ -20,9 +20,13 @@ Laravel的身份验证机制核心由`guard`和`provider`组成。其中，`guar
 ],
 ```
 > 注意：guard名称不能决定该守卫采取那种认证方案，真正取决定作用的是`'driver' => 'session'`配置项
-```php
-Auth::guard('admin')->user();
 
+```php
+// 使用名称为 admin 的 Guard 获取当前认证用户
+Auth::guard('admin')->user();
+// 指定 /users 路由使用 admin Guard 进行身份认证
+Route::get('/users', [UserController::class, 'index'])
+    ->middleware('auth:admin');
 ```
 > guard默认提供的web guard支持Session-Cookie方案来实现身份验证，如果
 
