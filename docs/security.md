@@ -1,7 +1,7 @@
 # 安全性
 ## 身份认证
 Laravel的身份验证机制核心由`guard`和`provider`组成。其中，`guard`提供了身份验证方案
-> Laravel提供的身份验证方案包括Session + Cookie（Laravel's Built-in Browser Authentication Services）和Token（API Authentication Services），默认支持的是前者，后者需要通过安装Sanctum（基于普通API Token）或Passport（基于OAuth 2.0 / Access Token）来实现
+> Laravel提供的身份验证方案包括Session+Cookie（Laravel's Built-in Browser Authentication Services）和Token（API Authentication Services），默认支持的是前者，后者需要通过安装Sanctum（基于普通API Token）或Passport（基于OAuth 2.0 / Access Token）来实现
 
 ### Laravel中身份认证方案的配置
 web是该guard的名称，driver决定该守卫用什么样的身份验证机制，provider决定使用什么用户来源
