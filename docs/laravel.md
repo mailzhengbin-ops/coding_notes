@@ -21,7 +21,7 @@ laravel --version
 php -v
 composer -v
 ```
-> 如果需要更新，重新运行安装命令即可
+> 注意：php.new安装的运行环境是Herd Lite，包含了三件套(PHP/Composer/Laravel installer)，但其中的PHP是阉割版，只包含了Laravel应用足以运行的基础扩展，如不满足需要自行下载PHP完整体；如果需要更新，重新运行安装命令即可
 
 + Web服务器：默认采用php内置的开发服务器，通过`php artisan serve`启动
 + 数据库：默认采用Laravel内置的sqlite，并且执行了必要的迁移来创建数据库表
