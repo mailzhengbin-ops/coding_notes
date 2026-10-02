@@ -124,31 +124,25 @@ npm run build
 ```bash
 php artisan migrate
 ```
-
 ### 优化缓存
 把 Laravel 运行时需要读取和解析的信息（config、event、route、view）提前生成缓存，从而让生产环境启动和请求处理更快
 ```bash
 php artisan optimize
 ```
-清除缓存
-```bash
-php artisan optimize:clear
-```
 注意：每次修改配置后需要重新执行，避免加载旧配置
 
 ### 目录权限
-Laravel 需要写入 `/ bootstrap/cacheetc storage/webserver ...
+官方要求：确保Web 服务器进程所有者能写 `storage/` 和 `bootstrap/cache/` 两个目录
+```bash
+chown -R $USER:www-data storage bootstrap/cache
+chmod -R 775 storage bootstrap/cache
+```
+注意：www-data即所有者，具体查看方法名称可能不同
 
 ### 创建软链接
 在public/storage创建软链指向storage/app/public
 ```bash
 php artisan storage:link
-```
-
-### 关闭debug
-```bash
-APP_ENV=production
-APP_DEBUG=false
 ```
 ### 配置nginx
 通过FastCGI，分发请求给PHP-FPM处理
