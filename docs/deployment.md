@@ -1,18 +1,22 @@
-# 部署上线
-查看当前项目前基本信息：Environment、Cache、Drivers、Storage
-```bash
-php artisan about
-```
+## 部署上线
+## 前提：服务器环境要求
+| 软件 | 用途 |
+|---|---|
+| PHP | 运行环境 |
+| Composer | 安装后端依赖 |
+| Node.js | 安装、构建前端依赖 |
+| nginx + php-fpm | nginx 接收 HTTP 请求，PHP-FPM 执行 PHP 代码 |
+| 数据库 | 各类型数据库可选 |
+| Git | 从 GitHub 拉取项目项目到本机 |
 ## 依赖安装
 ```bash
-# 安装composer包
+# 安装composer依赖
 composer install --no-dev --optimize-autoloader
-# 安装npm包
+# 安装npm依赖
 npm install
 # 打包前端资源
 npm run build
 ```
-注意：服务器需要有composer和node.js（含npm）
 
 ## 创建APP_KEY
 执行如下命令，为项目生成应用加密密钥
@@ -180,3 +184,7 @@ server {
 }
 ```
 
+查看当前项目前基本信息：Environment、Cache、Drivers、Storage
+```bash
+php artisan about
+```
