@@ -1,5 +1,5 @@
 # 部署上线
-查看当前项目前基本信息
+查看当前项目前基本信息：Environment、Cache、Drivers、Storage
 ```bash
 php artisan about
 ```
