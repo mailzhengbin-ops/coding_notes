@@ -26,19 +26,19 @@ APP_KEY=base64:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ## 扩展和函数
 必装项（官方要求，Laravel运行不可或缺）
 + PHP >= 8.3
-+ Ctype PHP Extension
++ Ctype PHP Extension内置
 + cURL PHP Extension
-+ DOM PHP Extension
++ DOM PHP Extension内置
 + Fileinfo PHP Extension
-+ Filter PHP Extension
-+ Hash PHP Extension
++ Filter PHP Extension内置
++ Hash PHP Extension内置
 + Mbstring PHP Extension
 + OpenSSL PHP Extension
-+ PCRE PHP Extension
-+ PDO PHP Extension
-+ Session PHP Extension
-+ Tokenizer PHP Extension
-+ XML PHP Extension
++ PCRE PHP Extension内置
++ PDO PHP Extension（pdo核心内置，但具体数据库的驱动pdo没内置pdo_sqlite、pdo_mysql）
++ Session PHP Extension内置
++ Tokenizer PHP Extension内置
++ XML PHP Extension内置
 
 可选项（基于网站需要）：
 + 取消函数禁用symlink()：项目需要创建软连
