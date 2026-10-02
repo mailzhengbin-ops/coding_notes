@@ -19,7 +19,6 @@ git push -u origin main
 | 数据库 | 各类型数据库可选 |
 | Git | 从 GitHub 拉取项目项目到本机 |
 
-
 ## 开始部署：
 
 ### GitHub仓库项目拉取到本机（云服务器）
@@ -27,12 +26,7 @@ git push -u origin main
 git clone https://github.com/xxx/xxx.git
 ```
 ### 生成环境配置
-+ 执行如下命令，生成应用的APP_KEY（密钥）
-```bash
-php artisan key:generate
-```
-+ 拷贝根目录下.env.example重命名为.env
-+ 修改.env内配置项
++ 拷贝根目录下.env.example重命名为.env；修改按项目需求修改配置项
 ```ini
 # ── 应用 ──────────────────────────────
 APP_NAME=MyApp                    # 建议用英文，它会参与生成 session cookie 的名字
@@ -91,21 +85,18 @@ MAIL_FROM_NAME="${APP_NAME}"
 VITE_APP_NAME="${APP_NAME}"
 ```
 > 每次改完 `.env` 都要重新执行 `php artisan optimize`，否则跑的还是旧配置缓存
++ 执行如下命令，在.env中生成应用的APP_KEY（密钥）
+```bash
+php artisan key:generate
+```
 ### 依赖安装
 ```bash
 # 安装composer依赖
 composer install --no-dev --optimize-autoloader
-# 安装npm依赖
-npm install
+# 安装npm依赖，ci是npm是专为部署提供的命令（更加严格、干净、可复现），以替代npm install
+npm ci
 # 打包前端资源
 npm run build
-```
-
-### 创建APP_KEY
-
-执行后，在.env文件中生成APP_KEY配置
-```bash
-APP_KEY=base64:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 ### 扩展和函数
 必装项（官方要求，Laravel运行不可或缺）
@@ -128,18 +119,8 @@ APP_KEY=base64:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 + 取消函数禁用symlink()：项目需要创建软连
 + PhpRedis扩展：项目的缓存驱动器为redis
 
-### 数据库选择与迁移
-
-由于Starter Kits默认采用sqlite，如更换数据库需要到.env文件中切换数据库，更改连接配置
-```bash
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=laravel
-DB_USERNAME=root
-DB_PASSWORD=
-```
-并且重新执行数据库迁移
+### 迁移数据库
+按照.env配置的数据库，迁移数据库文件到选中的数据库里
 ```bash
 php artisan migrate
 ```
