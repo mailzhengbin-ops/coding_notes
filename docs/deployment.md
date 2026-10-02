@@ -1,5 +1,15 @@
-## 部署上线
-## 前提：服务器环境要求
+# 部署上线
+## 部署前准备：
+### 本地项目推送到GitHub仓库
+```bash
+git init
+git add .
+git commit -m "本次提交的描述"
+# 在 GitHub 网页上新建一个空仓库（不要勾选 README），然后：
+git remote add origin git@github.com:你的用户名/你的仓库.git
+git push -u origin main
+```
+### 准备服务器环境
 | 软件 | 用途 |
 |---|---|
 | PHP | 运行环境 |
@@ -8,7 +18,80 @@
 | nginx + php-fpm | nginx 接收 HTTP 请求，PHP-FPM 执行 PHP 代码 |
 | 数据库 | 各类型数据库可选 |
 | Git | 从 GitHub 拉取项目项目到本机 |
-## 依赖安装
+
+
+## 开始部署：
+
+### GitHub仓库项目拉取到本机（云服务器）
+```bash
+git clone https://github.com/xxx/xxx.git
+```
+### 生成环境配置
++ 执行如下命令，生成应用的APP_KEY（密钥）
+```bash
+php artisan key:generate
+```
++ 拷贝根目录下.env.example重命名为.env
++ 修改.env内配置项
+```ini
+# ── 应用 ──────────────────────────────
+APP_NAME=MyApp                    # 建议用英文，它会参与生成 session cookie 的名字
+APP_ENV=production                # 改
+APP_KEY=                          # 保持 key:generate 生成的值，不要手写
+APP_DEBUG=false                   # 改：必须！否则报错页会暴露数据库密码
+APP_URL=https://example.com       # 改：你的域名，必须 https、结尾不带斜杠
+
+APP_LOCALE=en                     # 可选：做中文站改 zh_CN（还需装语言包，见 3.3 末尾）
+APP_FALLBACK_LOCALE=en
+APP_FAKER_LOCALE=zh_CN
+
+APP_MAINTENANCE_DRIVER=file
+BCRYPT_ROUNDS=12                  # 保持默认
+
+# ── 日志 ──────────────────────────────
+LOG_CHANNEL=stack
+LOG_STACK=single
+LOG_DEPRECATIONS_CHANNEL=null
+LOG_LEVEL=error                   # 改：生产别用 debug，日志会爆
+
+# ── 数据库 ────────────────────────────
+DB_CONNECTION=mysql               # 改：从 sqlite 换掉
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=example_app
+DB_USERNAME=example_user
+DB_PASSWORD=这里填真实强密码
+
+# ── 会话 ──────────────────────────────
+SESSION_DRIVER=database           # 保持
+SESSION_LIFETIME=120
+SESSION_ENCRYPT=false
+SESSION_PATH=/
+SESSION_DOMAIN=null
+SESSION_SECURE_COOKIE=true        # cookie 只在 https 下发送（等 HTTPS 配好后再加这行！）
+SESSION_SAME_SITE=lax
+
+# ── 队列 / 缓存 / 存储 / 广播 ──────────
+QUEUE_CONNECTION=database         # 保持：别忘了起 queue:work 进程（见第 5 节）
+CACHE_STORE=database              # 保持：访问量大再换 redis
+FILESYSTEM_DISK=local
+BROADCAST_CONNECTION=log
+
+# ── 邮件（必改！否则用户收不到验证/重置密码邮件）──
+MAIL_MAILER=smtp                  # 改：从 log 换成 smtp
+MAIL_SCHEME=null
+MAIL_HOST=smtp.example.com        # 你的邮件服务商
+MAIL_PORT=587
+MAIL_USERNAME=你的邮箱账号
+MAIL_PASSWORD=邮箱授权码          # 通常不是登录密码，要去服务商后台开 SMTP 拿授权码
+MAIL_FROM_ADDRESS="no-reply@example.com"
+MAIL_FROM_NAME="${APP_NAME}"
+
+# ── 前端 ──────────────────────────────
+VITE_APP_NAME="${APP_NAME}"
+```
+> 每次改完 `.env` 都要重新执行 `php artisan optimize`，否则跑的还是旧配置缓存
+### 依赖安装
 ```bash
 # 安装composer依赖
 composer install --no-dev --optimize-autoloader
@@ -18,16 +101,13 @@ npm install
 npm run build
 ```
 
-## 创建APP_KEY
-执行如下命令，为项目生成应用加密密钥
-```bash
-php artisan key:generate
-```
+### 创建APP_KEY
+
 执行后，在.env文件中生成APP_KEY配置
 ```bash
 APP_KEY=base64:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
-## 扩展和函数
+### 扩展和函数
 必装项（官方要求，Laravel运行不可或缺）
 + PHP >= 8.3
 + Ctype PHP Extension内置
@@ -48,7 +128,7 @@ APP_KEY=base64:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 + 取消函数禁用symlink()：项目需要创建软连
 + PhpRedis扩展：项目的缓存驱动器为redis
 
-## 数据库选择与迁移
+### 数据库选择与迁移
 
 由于Starter Kits默认采用sqlite，如更换数据库需要到.env文件中切换数据库，更改连接配置
 ```bash
@@ -64,7 +144,7 @@ DB_PASSWORD=
 php artisan migrate
 ```
 
-## 优化缓存
+### 优化缓存
 把 Laravel 运行时需要读取和解析的信息（config、event、route、view）提前生成缓存，从而让生产环境启动和请求处理更快
 ```bash
 php artisan optimize
@@ -75,21 +155,21 @@ php artisan optimize:clear
 ```
 注意：每次修改配置后需要重新执行，避免加载旧配置
 
-## 目录权限
+### 目录权限
 Laravel 需要写入 `/ bootstrap/cacheetc storage/webserver ...
 
-## 创建软链接
+### 创建软链接
 在public/storage创建软链指向storage/app/public
 ```bash
 php artisan storage:link
 ```
 
-## 关闭debug
+### 关闭debug
 ```bash
 APP_ENV=production
 APP_DEBUG=false
 ```
-## 配置nginx
+### 配置nginx
 通过FastCGI，分发请求给PHP-FPM处理
 ```nginx
 server {
