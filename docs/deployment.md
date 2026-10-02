@@ -1,5 +1,5 @@
 # 部署上线
-## 部署前准备：
+## 事前准备：
 ### 本地项目推送到GitHub仓库
 ```bash
 git init
@@ -143,6 +143,10 @@ chmod -R 775 storage bootstrap/cache
 在public/storage创建软链指向storage/app/public
 ```bash
 php artisan storage:link
+```
+### 3.7 验证部署
+```bash
+php artisan about
 ```
 ### 配置nginx
 通过FastCGI，分发请求给PHP-FPM处理
