@@ -25,7 +25,7 @@ git push -u origin main
 ```bash
 git clone https://github.com/xxx/xxx.git
 ```
-### 生成环境配置
+### .env配置
 + 拷贝根目录下.env.example重命名为.env；修改按项目需求修改配置项
 ```ini
 # ── 应用 ──────────────────────────────
