@@ -25,6 +25,7 @@ git push -u origin main
 ```bash
 git clone https://github.com/xxx/xxx.git
 ```
+> 如果仓库代码有更新，可以直接git pull把远程 Git仓库的新代码拉到当前本地仓库，并更新当前分支。
 ### .env配置
 + 拷贝根目录下.env.example重命名为.env；修改按项目需求修改配置项
 ```ini
