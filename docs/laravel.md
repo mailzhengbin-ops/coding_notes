@@ -11,18 +11,16 @@ npm -v
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
 ```
 
-**PHP环境**：PHP、Composer、Laravel installer（一键安装命令，[php.new提供](https://php.new/)）
-
+**PHP环境**：PHP、Composer、Laravel installer
 ```bash
-# 指令
+# php.new 提供的一键安装命令
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://php.new/install/windows/8.5'))
 # 检查
 laravel --version
 php -v
 composer -v
 ```
-> php.new 安装的运行环境是 Herd Lite，包含 PHP、Composer、Laravel Installer 三件套。
-> 其中 PHP 仅包含 Laravel 运行所需的基础扩展，其他扩展需自行安装完整 PHP；更新时重新运行安装命令即可。
+> [php.new提供](https://php.new/)安装的是Herd Lite环境，其提供的PHP仅包含了Laravel 运行所需的基础扩展且无法自行扩展，必要时需要安装完整版的PHP；更新时重新运行安装命令即可。
 
 + Web服务器：默认采用php内置的开发服务器，通过`php artisan serve`启动
 + 数据库：默认采用Laravel内置的sqlite，并且执行了必要的迁移来创建数据库表
