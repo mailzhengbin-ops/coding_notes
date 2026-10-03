@@ -67,6 +67,24 @@ Service Container ← Service Provider
       ↓
 注入到 UserController
 ```
+### 服务提供者的register和boot
+四种register方式
+```php
+public function register(): void
+{
+    // 每次解析都 new 一个新对象
+    $this->app->bind(ReportGenerator::class);
+
+    // 只 new 一次，之后所有地方共用同一个
+    $this->app->singleton(PaymentGateway::class);
+
+    // 每个请求（生命周期）内共用一个 —— 队列/Octane 下更安全
+    $this->app->scoped(CurrentCart::class);
+
+    // 直接给一个现成的对象
+    $this->app->instance('app.version', new Version('1.2.0'));
+}
+```
 ### 声明依赖
 即告诉服务容器，我需要谁，Laravel中依赖通过函数的参数进行声明，主要分两种情况
 ```php
