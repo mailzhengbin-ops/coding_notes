@@ -29,13 +29,13 @@ export default defineConfig({
     },
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: 'Examples', link: '/' }
     ],
     sidebar: [
       {
         text: '杂项',
         items: [
-          { text: '剪切板', link: '/api-examples' },
+          { text: '剪切板', link: '/shortcuts' },
         ]
       },
       {
@@ -44,22 +44,22 @@ export default defineConfig({
       {
         text: 'Laravel',
         items: [
-          { text: '项目启动', link: '/laravel' },
-          { text: '设计思想', link: '/markdown-examples' },
-          { text: '部署上线', link: '/deployment' },
-          { text: 'PHP特性', link: '/frontend' },
-          { text: '数据库', link: '/database' },
-          { text: '性能优化', link: '/optimize' },
-          { text: '安全性', link: '/security' },
-          { text: '外部服务集成', link: '/api' },
+          { text: '项目启动', link: '/laravel/laravel_start' },
+          { text: '设计思想', link: '/laravel/design_thoughts' },
+          { text: '部署上线', link: '/laravel/deployment' },
+          { text: 'PHP特性', link: '/laravel/php_features' },
+          { text: '数据库', link: '/laravel/database' },
+          { text: '性能优化', link: '/laravel/optimize' },
+          { text: '安全性', link: '/laravel/security' },
+          { text: '外部服务集成', link: '/laravel/api' },
         ]
       },
       {
         text: 'Nest.js',
         collapsed: true,
         items: [
-          { text: '项目启动', link: '/a' },
-          { text: '设计思想', link: '/nest_module' },
+          { text: '项目启动', link: '/nest/nest_start' },
+          { text: '设计思想', link: '/nest/nest_module' },
         ]
       },
         ]

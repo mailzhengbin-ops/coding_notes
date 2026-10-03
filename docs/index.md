@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: 查看文档
-      link: /laravel
+      link: /laravel/laravel_start
 
 features:
   - title: Laravel
