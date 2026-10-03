@@ -1,9 +1,9 @@
 ---
 outline: deep
 ---
-tailwindcss/typography问题是这些东西不应该是后台markdown编辑器包包含的吗
-https://101.96.241.63:26417/home
+
 https://101.96.241.63:26417/418b52fe
+
 ## 代理代理
 ```powershell
 # 启动
@@ -14,6 +14,9 @@ echo $env:HTTP_PROXY
 echo $env:HTTPS_PROXY
 ```
 ## Git管理
+
+拉取项目
+git clone https://github.com/mailzhengbin-ops/coding_notes.git
 ```bash
 # 初始化git仓库
 git init
