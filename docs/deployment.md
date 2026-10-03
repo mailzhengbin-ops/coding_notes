@@ -96,7 +96,7 @@ php artisan key:generate
 composer install --no-dev --optimize-autoloader
 # 安装npm依赖，ci是npm是专为部署提供的命令（更加严格、干净、可复现），以替代npm install
 npm ci
-# 打包前端资源
+# 打包前端资源（本地gitignore忽略了build，因此需要重新打包）
 npm run build
 ```
 ### 扩展和函数
