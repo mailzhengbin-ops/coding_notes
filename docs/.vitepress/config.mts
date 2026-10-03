@@ -5,6 +5,7 @@ export default defineConfig({
   title: "zhengbin wiki",
   description: "A VitePress Site",
   themeConfig: {
+    logo: '/logo.svg',
     externalLinkIcon: true,
     darkModeSwitchLabel: '外观',
     lightModeSwitchTitle: '切换到浅色模式',
