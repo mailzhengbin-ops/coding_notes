@@ -67,8 +67,32 @@ Service Container ← Service Provider
       ↓
 注入到 UserController
 ```
-### 服务提供者的register和boot
-四种register方式
+### 声明依赖
+即告诉服务容器，我需要谁，Laravel中依赖通过函数的参数进行声明，主要分两种情况
+```php
+class UserController{
+    // ① 构造函数参数声明依赖
+    public function __construct(UserService $service){
+        $this->service = $service;
+    }
+    // ② 普通方法参数声明依赖
+    public function show(UserRepository $repository){
+        return $repository->find(1);
+    }
+}
+```
+### 依赖解析与反射
+容器根据调用处的依赖声明，找到它需要的对象（如果该对象还依赖其他对象，就继续递归解析这些依赖，直到所有依赖都准备好）为后续注入做准备
+
+### 反射解析
+开日常开发中，大多数的类不需要手动到服务提供者的boot中注册，因为PHP本身具有反射解析的能力可以自动完成，原理如下
+容器解析一个具体类时，发现该类没有在register内注册 -> 反射看这个类的构造函数要什么 -> 递归把每个参数解析出来（参数也是类？继续造）
+
+
+### 服务提供者
+服务提供者用于向服务容器register（注册）和boot（配置）服务，使服务容器明确知道如何创建和解析服务
+#### 服务提供者的register和boot
+register服务的方式
 ```php
 public function register(): void
 {
@@ -85,24 +109,9 @@ public function register(): void
     $this->app->instance('app.version', new Version('1.2.0'));
 }
 ```
-### 声明依赖
-即告诉服务容器，我需要谁，Laravel中依赖通过函数的参数进行声明，主要分两种情况
-```php
-class UserController{
-    // ① 构造函数参数声明依赖
-    public function __construct(UserService $service){
-        $this->service = $service;
-    }
-    // ② 普通方法参数声明依赖
-    public function show(UserRepository $repository){
-        return $repository->find(1);
-    }
-}
-```
-### 依赖解析
-容器根据一个调用处的依赖声明，找到它需要的对象（如果该对象还依赖其他对象，就继续递归解析这些依赖，直到所有依赖都准备好）为后续注入做准备
-### 服务提供者
-服务提供者负责向服务容器注册和配置服务，使服务容器明确知道如何创建和解析服务。
+
+
+
 
 例如上文中需要创建 "UserService" 对象时，服务提供者会提前向服务容器注册其创建方式，服务容器在后续创建时，便可以按照注册的规则创建
 > 需要注意的是，不是任何服务都要用户手动使用服务提供者来注册和配置，容器可以通过反射解析来自动完成
